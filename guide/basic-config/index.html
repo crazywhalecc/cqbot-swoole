@@ -1,0 +1,2300 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>基本配置 - 炸毛框架文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="炸毛框架文档" class="md-header__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../assets/logos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            炸毛框架文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基本配置
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../event/" class="md-tabs__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../component/" class="md-tabs__link">
+        框架组件
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../advanced/" class="md-tabs__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/FAQ/" class="md-tabs__link">
+        FAQ
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../update/v2/" class="md-tabs__link">
+        更新日志
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs-v1.zhamao.xin/" class="md-tabs__link">
+      <u>炸毛框架 v1</u>
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="炸毛框架文档" class="md-nav__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../assets/logos.png" alt="logo">
+
+    </a>
+    炸毛框架文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        安装框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart-robot/" class="md-nav__link">
+        快速上手（机器人篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart-http/" class="md-nav__link">
+        快速上手（HTTP篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onebot-choose/" class="md-nav__link">
+        选择聊天机器人实例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          基本配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        基本配置
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#globalphp" class="md-nav__link">
+    全局配置文件 global.php
+  </a>
+  
+    <nav class="md-nav" aria-label="全局配置文件 global.php">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swoole" class="md-nav__link">
+    子表 swoole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    子表 runtime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light_cache" class="md-nav__link">
+    子表 light_cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker_cache" class="md-nav__link">
+    子表 worker_cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql_config" class="md-nav__link">
+    子表 sql_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis_config" class="md-nav__link">
+    子表 redis_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_file_server" class="md-nav__link">
+    子表 static_file_server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebot" class="md-nav__link">
+    子表 onebot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote_terminal" class="md-nav__link">
+    子表 remote_terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_loader" class="md-nav__link">
+    子表 module_loader
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    多环境下的配置文件
+  </a>
+  
+    <nav class="md-nav" aria-label="多环境下的配置文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用环境参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    不同环境配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    优先级
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    其他自定义配置文件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../write-module/" class="md-nav__link">
+        编写模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../register-event/" class="md-nav__link">
+        注册事件响应
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errcode/" class="md-nav__link">
+        错误码对照表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        事件和注解
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="事件和注解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          事件和注解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/" class="md-nav__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/robot-annotations/" class="md-nav__link">
+        机器人注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/route-annotations/" class="md-nav__link">
+        HTTP 路由注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/framework-annotations/" class="md-nav__link">
+        框架核心注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/middleware/" class="md-nav__link">
+        中间件注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/custom-annotations/" class="md-nav__link">
+        自定义注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/event-dispatcher/" class="md-nav__link">
+        事件分发器
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        框架组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="框架组件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          框架组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/" class="md-nav__link">
+        框架组件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/context/" class="md-nav__link">
+        上下文
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        聊天机器人组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="聊天机器人组件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          聊天机器人组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/robot-api/" class="md-nav__link">
+        机器人 API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/cqcode/" class="md-nav__link">
+        CQ 码（多媒体消息）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/message-util/" class="md-nav__link">
+        机器人消息处理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/access-token/" class="md-nav__link">
+        Token 验证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/turing-api/" class="md-nav__link">
+        图灵机器人 API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        存储
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="存储" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          存储
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/light-cache/" class="md-nav__link">
+        LightCache 轻量缓存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/mysql/" class="md-nav__link">
+        MySQL 查询器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/mysql-db/" class="md-nav__link">
+        MySQL 查询器（废弃）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/redis/" class="md-nav__link">
+        Redis 数据库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/atomics/" class="md-nav__link">
+        ZMAtomic 原子计数器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/spin-lock/" class="md-nav__link">
+        SpinLock 自旋锁
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/data-provider/" class="md-nav__link">
+        文件管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        HTTP 服务器工具类
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="HTTP 服务器工具类" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP 服务器工具类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/zmrequest/" class="md-nav__link">
+        HTTP 和 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/route-manager/" class="md-nav__link">
+        HTTP 路由管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        模块/插件管理
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="模块/插件管理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          模块/插件管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/module/module-pack/" class="md-nav__link">
+        模块打包
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/module/module-unpack/" class="md-nav__link">
+        模块解包
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/coroutine-pool/" class="md-nav__link">
+        协程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/singleton-trait/" class="md-nav__link">
+        单例类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/zmutil/" class="md-nav__link">
+        ZMUtil 杂项
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/global-functions/" class="md-nav__link">
+        全局方法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/console/" class="md-nav__link">
+        Console 终端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/task-worker/" class="md-nav__link">
+        TaskWorker 管理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/remote-terminal/" class="md-nav__link">
+        Terminal 终端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        进阶开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="进阶开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          进阶开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/" class="md-nav__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/framework-structure/" class="md-nav__link">
+        框架剖析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/custom-start/" class="md-nav__link">
+        框架启动模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/manually-install/" class="md-nav__link">
+        手动安装环境
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/to-v2/" class="md-nav__link">
+        从 v1 升级
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/inside-class/" class="md-nav__link">
+        内部类文件手册
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/connect-ws-client/" class="md-nav__link">
+        接入 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/multi-process/" class="md-nav__link">
+        框架多进程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/task-worker/" class="md-nav__link">
+        TaskWorker 提高并发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      <label class="md-nav__link" for="__nav_4_10">
+        开发实战教程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发实战教程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          开发实战教程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/example/admin/" class="md-nav__link">
+        编写管理员才能触发的功能
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/usual-question/" class="md-nav__link">
+        框架常见问题（持续更新）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/address-already-in-use/" class="md-nav__link">
+        启动时报错 Address already in use
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/display-deadlock/" class="md-nav__link">
+        出现 deadlock 字样
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/light-cache-wrong/" class="md-nav__link">
+        使用 LightCache 关闭时无法正常保存持久化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/wait-message-cqbefore/" class="md-nav__link">
+        CQBefore 过滤不了 waitMessage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        更新日志
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="更新日志" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          更新日志
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/v2/" class="md-nav__link">
+        更新日志（v2）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/v1/" class="md-nav__link">
+        更新日志（v1）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/build-update/" class="md-nav__link">
+        更新日志（build update）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/config/" class="md-nav__link">
+        配置文件更新日志
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs-v1.zhamao.xin/" class="md-nav__link">
+        <u>炸毛框架 v1</u>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#globalphp" class="md-nav__link">
+    全局配置文件 global.php
+  </a>
+  
+    <nav class="md-nav" aria-label="全局配置文件 global.php">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swoole" class="md-nav__link">
+    子表 swoole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    子表 runtime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light_cache" class="md-nav__link">
+    子表 light_cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker_cache" class="md-nav__link">
+    子表 worker_cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql_config" class="md-nav__link">
+    子表 sql_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis_config" class="md-nav__link">
+    子表 redis_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_file_server" class="md-nav__link">
+    子表 static_file_server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebot" class="md-nav__link">
+    子表 onebot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote_terminal" class="md-nav__link">
+    子表 remote_terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_loader" class="md-nav__link">
+    子表 module_loader
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    多环境下的配置文件
+  </a>
+  
+    <nav class="md-nav" aria-label="多环境下的配置文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用环境参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    不同环境配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    优先级
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    其他自定义配置文件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/zhamao-robot/zhamao-framework/blob/master/docs/guide/basic-config.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">基本配置</h1>
+<p>到目前为止，炸毛框架的配置文件还没有任何变更，是默认的行为。在本章内容中，将列举出炸毛框架的配置文件的规则和使用。</p>
+<div class="admonition error">
+<p class="admonition-title">警告</p>
+<p>因为炸毛框架的全局配置中含有数据库名称和密码以及 access_token 等敏感字段，在使用版本控制软件过程中请不要将敏感信息写入配置文件并提交至开源仓库！</p>
+</div>
+<h2 id="globalphp">全局配置文件 global.php</h2>
+<p>框架的全局配置文件在 <code>config/global.php</code> 文件中。下面是配置文件的各个选项，请根据自己的需要自行配置。</p>
+<table>
+<thead>
+<tr>
+<th align="left">配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>host</code></td>
+<td>框架监听的地址</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td align="left"><code>port</code></td>
+<td>框架监听的端口</td>
+<td>20001</td>
+</tr>
+<tr>
+<td align="left"><code>http_reverse_link</code></td>
+<td>框架开到公网或外部的 HTTP 反代链接</td>
+<td>见配置文件</td>
+</tr>
+<tr>
+<td align="left"><code>zm_data</code></td>
+<td>框架的配置文件、日志文件等文件目录</td>
+<td><code>./</code> 下的 <code>zm_data/</code></td>
+</tr>
+<tr>
+<td align="left"><code>debug_mode</code></td>
+<td>框架是否启动 debug 模式</td>
+<td>false</td>
+</tr>
+<tr>
+<td align="left"><code>crash_dir</code></td>
+<td>存放崩溃和运行日志的目录</td>
+<td><code>zm_data</code> 下的 <code>crash/</code></td>
+</tr>
+<tr>
+<td align="left"><code>config_dir</code></td>
+<td>存放 saveToJson() 方法保存的数据的目录</td>
+<td><code>zm_data</code> 下的 <code>config/</code></td>
+</tr>
+<tr>
+<td align="left"><code>swoole</code></td>
+<td>对应 Swoole server 中 set 的参数，参考Swoole文档</td>
+<td>见子表 <code>swoole</code></td>
+</tr>
+<tr>
+<td align="left"><code>runtime</code></td>
+<td>一些框架运行时调整的设置</td>
+<td>见子表 <code>runtime</code></td>
+</tr>
+<tr>
+<td align="left"><code>light_cache</code></td>
+<td>轻量内置 key-value 缓存</td>
+<td>见字表 <code>light_cache</code></td>
+</tr>
+<tr>
+<td align="left"><code>worker_cache</code></td>
+<td>跨进程变量级缓存</td>
+<td>见子表 <code>worker_cache</code></td>
+</tr>
+<tr>
+<td align="left"><code>sql_config</code></td>
+<td>MySQL 数据库连接信息</td>
+<td>见子表 <code>sql_config</code></td>
+</tr>
+<tr>
+<td align="left"><code>redis_config</code></td>
+<td>Redis 连接信息</td>
+<td>见子表 <code>redis_config</code></td>
+</tr>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td>OneBot 客户端连接约定的token，留空则无，相关设置见 <a href="component/access-token">组件 - Access Token 验证</a></td>
+<td>空</td>
+</tr>
+<tr>
+<td align="left"><code>http_header</code></td>
+<td>HTTP 请求自定义返回的header</td>
+<td>见配置文件</td>
+</tr>
+<tr>
+<td align="left"><code>http_default_code_page</code></td>
+<td>HTTP服务器在指定状态码下回复的默认页面</td>
+<td>见配置文件</td>
+</tr>
+<tr>
+<td align="left"><code>init_atomics</code></td>
+<td>框架启动时初始化的原子计数器列表</td>
+<td>见配置文件</td>
+</tr>
+<tr>
+<td align="left"><code>info_level</code></td>
+<td>终端日志显示等级（0-4）</td>
+<td>2</td>
+</tr>
+<tr>
+<td align="left"><code>context_class</code></td>
+<td>上下文所定义的类，见对应上下文说明文档</td>
+<td><code>\ZM\Context\Context::class</code></td>
+</tr>
+<tr>
+<td align="left"><code>static_file_server</code></td>
+<td>静态文件服务器配置项</td>
+<td>见子表 <code>static_file_server</code></td>
+</tr>
+<tr>
+<td align="left"><code>server_event_handler_class</code></td>
+<td>注册 Swoole Server 事件注解的类列表，在 Swoole 服务器启动前就被加载</td>
+<td>空</td>
+</tr>
+<tr>
+<td align="left"><code>onebot</code></td>
+<td>OneBot 协议相关配置</td>
+<td>见子表 <code>onebot</code></td>
+</tr>
+<tr>
+<td align="left"><code>remote_terminal</code></td>
+<td>远程终端相关配置</td>
+<td>见子表 <code>remote_terminal</code></td>
+</tr>
+<tr>
+<td align="left"><code>module_loader</code></td>
+<td>模块/插件 加载相关配置</td>
+<td>见子表 <code>module_loader</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="swoole">子表 <strong>swoole</strong></h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>log_file</code></td>
+<td>Swoole 的日志文件</td>
+<td><code>crash_dir</code> 下的 <code>swoole_error.log</code></td>
+</tr>
+<tr>
+<td><code>worker_num</code></td>
+<td>Worker 工作进程数</td>
+<td>运行框架的主机 CPU 核心数</td>
+</tr>
+<tr>
+<td><code>dispatch_mode</code></td>
+<td>数据包分发策略，见 <a href="https://wiki.swoole.com/#/server/setting?id=dispatch_mode">文档</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>max_coroutine</code></td>
+<td>最大协程并发数</td>
+<td>300000</td>
+</tr>
+<tr>
+<td><code>max_wait_time</code></td>
+<td>退出进程时等待协程恢复的最长时间（秒）</td>
+<td>5（2.4.3 版本后默认值）</td>
+</tr>
+<tr>
+<td><code>task_worker_num</code></td>
+<td>TaskWorker 工作进程数</td>
+<td>默认不开启（此参数被注释）</td>
+</tr>
+<tr>
+<td><code>task_enable_coroutine</code></td>
+<td>TaskWorker 工作进程启用协程</td>
+<td>默认不开启（此参数被注释）或 <code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="runtime">子表 runtime</h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>swoole_coroutine_hook_flags</code></td>
+<td>Swoole 启动时一键协程化 Hook 的 Flag 值，详见 <a href="http://wiki.swoole.com/#/runtime?id=%e5%87%bd%e6%95%b0%e5%8e%9f%e5%9e%8b">一键协程化</a></td>
+<td><code>SWOOLE_HOOK_ALL &amp; (~SWOOLE_HOOK_CURL)</code></td>
+</tr>
+<tr>
+<td><code>swoole_server_mode</code></td>
+<td>Swoole Server 启动的进程模式，有 <code>SWOOLE_PROCESS</code> 和 <code>SWOOLE_BASE</code> 两种，见 <a href="http://wiki.swoole.com/#/learn?id=swoole_process">启动方式</a></td>
+<td><code>SWOOLE_PROCESS</code></td>
+</tr>
+<tr>
+<td><code>middleware_error_policy</code></td>
+<td>中间件错误处理策略，见 <a href="../../event/middleware/#_6">中间件 - 错误处理策略</a></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="light_cache">子表 <strong>light_cache</strong></h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size</code></td>
+<td>最多可以缓存的 k-v 条目数（必须是 2 的 n 次方）</td>
+<td>512</td>
+</tr>
+<tr>
+<td><code>max_strlen</code></td>
+<td>作为 value 字符串的最大长度</td>
+<td>32768</td>
+</tr>
+<tr>
+<td><code>hash_conflict_proportion</code></td>
+<td>Hash冲突率（越大越好，但是需要的内存更多）</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td><code>persistence_path</code></td>
+<td>持久化的键值对的存储路径</td>
+<td><code>zm_data</code> 下的 <code>_cache.json</code></td>
+</tr>
+<tr>
+<td><code>auto_save_interval</code></td>
+<td>持久化的键值对自动保存时间间隔（秒）</td>
+<td>900</td>
+</tr>
+</tbody>
+</table>
+<h3 id="worker_cache">子表 worker_cache</h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>worker</code></td>
+<td>跨进程缓存的存储工作进程 id</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sql_config">子表 <strong>sql_config</strong></h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sql_host</code></td>
+<td>数据库地址(留空则不使用数据库)</td>
+<td>空</td>
+</tr>
+<tr>
+<td><code>sql_port</code></td>
+<td>数据库端口</td>
+<td>3306</td>
+</tr>
+<tr>
+<td><code>sql_username</code></td>
+<td>连接数据库的用户名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sql_database</code></td>
+<td>要连接的数据库名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sql_password</code></td>
+<td>数据库连接密码</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sql_options</code></td>
+<td>PDO 数据库的 options 参数</td>
+<td><code>[PDO::ATTR_STRINGIFY_FETCHES =&gt; false,PDO::ATTR_EMULATE_PREPARES =&gt; false]</code></td>
+</tr>
+<tr>
+<td><code>sql_default_fetch_mode</code></td>
+<td>PDO 的 fetch 模式</td>
+<td><code>PDO::FETCH_ASSOC</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="redis_config">子表 <strong>redis_config</strong></h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>Redis 服务器地址，留空则启动时不创建连接池</td>
+<td>空</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>Redis 服务器端口</td>
+<td>6379</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>Redis 超时时间</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>db_index</code></td>
+<td>Redis 要连接的数据库 index</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>auth</code></td>
+<td>认证字符串</td>
+<td>空</td>
+</tr>
+</tbody>
+</table>
+<h3 id="static_file_server">子表 static_file_server</h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>是否开启静态文件服务器</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>document_root</code></td>
+<td>静态文件的根目录</td>
+<td><code>{WORKING_DIR}/resources/html</code></td>
+</tr>
+<tr>
+<td><code>document_index</code></td>
+<td>默认索引的文件名列表</td>
+<td><code>["index.html"]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="onebot">子表 onebot</h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>是否开启 OneBot 标准机器人解析功能</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>single_bot_mode</code></td>
+<td>是否开启单机器人模式</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>message_level</code></td>
+<td>机器人的 WebSocket 事件在 Swoole 原生事件 <code>@OnMessageEvent</code> 中的等级（越高说明越被优先处理）</td>
+<td>99999</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remote_terminal">子表 remote_terminal</h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>是否开启远程终端功能，见 <a href="/component/remote-terminal">组件 - 远程终端</a></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>远程终端监听地址，为安全起见，默认值只允许本地回环地址（127.0.0.1）</td>
+<td><code>127.0.0.1</code></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>远程终端监听的 TCP 端口</td>
+<td>20002</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>远程终端连接的令牌（如果为空（""）则不验证）</td>
+<td>""</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module_loader">子表 module_loader</h3>
+<table>
+<thead>
+<tr>
+<th>配置名称</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable_hotload</code></td>
+<td>是否开启热加载模块包的功能</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>load_path</code></td>
+<td>模块包加载的目录地址</td>
+<td><code>zm_data</code> 下的 <code>modules</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">多环境下的配置文件</h2>
+<p>炸毛框架的配置文件模块支持不同环境下的配置文件，主要结构为 <code>global.{环境}.php</code>。在一般情况下，炸毛框架默认从教程引导方式根据指令 <code>vendor/bin/start server</code> 启动的框架是不带环境控制的。这章将讲述如何根据不同的环境（development / staging / production）来编写配置文件。</p>
+<h3 id="_3">使用环境参数</h3>
+<p>在启动框架时，额外增加参数 <code>--env</code> 可以指定当前的环境，从而使用不同的配置文件。现在框架支持以下几种环境： <code>development</code>，<code>staging</code>，<code>production</code>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>vendor/bin/start server --env<span class="o">=</span>development
+</code></pre></div>
+</td></tr></table>
+<h3 id="_4">不同环境配置文件</h3>
+<p>由于框架默认只带有 <code>global.php</code> 文件，所以假设你现在需要区分开发环境和生产环境的配置，将 <code>global.php</code> 文件复制并重命名为 <code>global.development.php</code> 或 <code>global.production.php</code> 即可。</p>
+<h3 id="_5">优先级</h3>
+<p>如果指定了 <code>--env</code> 环境参数：<code>global.{对应环境}.php</code> &gt; <code>global.php</code>，如果两个配置文件都找不到则报错。</p>
+<p>如果未指定 <code>--env</code> 环境参数：<code>global.php</code> &gt; <code>global.development.php</code> &gt; <code>global.staging.php</code> &gt; <code>global.production.php</code>。</p>
+<h2 id="_6">其他自定义配置文件</h2>
+<p>炸毛框架的全局配置文件为 <code>global.php</code>，为了让不同的开发者更好的二次开发或者集成更多功能，炸毛框架的配置文件模块也支持自己编写的其他 <code>*.php</code> 或 <code>*.json</code> 格式的配置文件。例如炸毛框架默认附带了 <code>file_header.json</code> 这个配置文件（用来返回各类文件扩展名对应的 <code>Content-Type</code> 头参数的表）。</p>
+<p>使用也非常简单，我们先以 <code>.json</code> 格式为例，我们创建一个 <code>example_a.json</code> 文件在 <code>config/</code> 目录（和 <code>global.php</code> 一个文件夹下），并编写自己的任意配置内容：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;key1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>在框架中，启动后就会默认加载，使用只需要用以下方式即可：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">use ZM\Config\ZMConfig; # 先 use 再使用！</span>
+<span class="x">$r = ZMConfig::get(&quot;example_a&quot;, &quot;key1&quot;); # $r == &quot;value1&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>如果需要用到变量或其他动态的内容，可以使用 <code>.php</code> 格式的配置文件。这里还是以 <code>example_a.php</code> 来举例：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;value1&quot;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;starttime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<span class="k">return</span> <span class="nv">$config</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>使用方式同上：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$r = ZMConfig::get(&quot;example_a&quot;, &quot;key1&quot;); # $r == &quot;value1&quot;</span>
+<span class="x">$time = ZMConfig::get(&quot;example_a&quot;, &quot;starttime&quot;); # $time == 服务器启动时间</span>
+</code></pre></div>
+</td></tr></table>
+<p>同时，自定义配置文件也支持环境变量，例如：<code>example_a.development.json</code> 或 <code>example_a.production.php</code> 均可。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../onebot-choose/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 选择聊天机器人实例" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              选择聊天机器人实例
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../write-module/" class="md-footer__link md-footer__link--next" aria-label="下一页: 编写模块" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              编写模块
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2021 CrazyBot Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx-switch"> <button data-md-color-scheme="default"><code>默认模式</code></button> <button data-md-color-scheme="slate"><code>暗黑模式</code></button> </span>
+<script> var buttons = document.querySelectorAll("button[data-md-color-scheme]"); buttons.forEach(function(button) { button.addEventListener("click", function() { var attr = this.getAttribute("data-md-color-scheme"); setCookie("_theme", attr); document.body.setAttribute("data-md-color-scheme", attr); var name = document.querySelector("#__code_0 code span:nth-child(7)"); name.textContent = attr; }) }) </script><br><a href="http://beian.miit.gov.cn">沪ICP备2021010446号-1</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

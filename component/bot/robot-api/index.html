@@ -1,0 +1,4074 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>机器人 API - 炸毛框架文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apionebotv11" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="炸毛框架文档" class="md-header__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../../assets/logos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            炸毛框架文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              机器人 API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../event/" class="md-tabs__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        框架组件
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../advanced/" class="md-tabs__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/FAQ/" class="md-tabs__link">
+        FAQ
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../update/v2/" class="md-tabs__link">
+        更新日志
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs-v1.zhamao.xin/" class="md-tabs__link">
+      <u>炸毛框架 v1</u>
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="炸毛框架文档" class="md-nav__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../../assets/logos.png" alt="logo">
+
+    </a>
+    炸毛框架文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/installation/" class="md-nav__link">
+        安装框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/quickstart-robot/" class="md-nav__link">
+        快速上手（机器人篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/quickstart-http/" class="md-nav__link">
+        快速上手（HTTP篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/onebot-choose/" class="md-nav__link">
+        选择聊天机器人实例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/basic-config/" class="md-nav__link">
+        基本配置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/write-module/" class="md-nav__link">
+        编写模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/register-event/" class="md-nav__link">
+        注册事件响应
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/errcode/" class="md-nav__link">
+        错误码对照表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        事件和注解
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="事件和注解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          事件和注解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/" class="md-nav__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/robot-annotations/" class="md-nav__link">
+        机器人注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/route-annotations/" class="md-nav__link">
+        HTTP 路由注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/framework-annotations/" class="md-nav__link">
+        框架核心注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/middleware/" class="md-nav__link">
+        中间件注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/custom-annotations/" class="md-nav__link">
+        自定义注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/event-dispatcher/" class="md-nav__link">
+        事件分发器
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        框架组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="框架组件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          框架组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        框架组件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/" class="md-nav__link">
+        上下文
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        聊天机器人组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="聊天机器人组件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          聊天机器人组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          机器人 API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        机器人 API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    属性
+  </a>
+  
+    <nav class="md-nav" aria-label="属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11api_normal" class="md-nav__link">
+    OneBotV11::API_NORMAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11api_async" class="md-nav__link">
+    OneBotV11::API_ASYNC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11api_rate_limited" class="md-nav__link">
+    OneBotV11::API_RATE_LIMITED
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    方法
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setprefix" class="md-nav__link">
+    setPrefix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcallback" class="md-nav__link">
+    setCallback()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getselfid" class="md-nav__link">
+    getSelfId()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11get" class="md-nav__link">
+    OneBotV11::get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11getrandom" class="md-nav__link">
+    OneBotV11::getRandom()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11getallrobot" class="md-nav__link">
+    OneBotV11::getAllRobot()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__construct" class="md-nav__link">
+    __construct()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    返回结果处理
+  </a>
+  
+    <nav class="md-nav" aria-label="返回结果处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    状态码和 Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    response 表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    机器人 API 方法
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人 API 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendprivatemsg" class="md-nav__link">
+    sendPrivateMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendgroupmsg" class="md-nav__link">
+    sendGroupMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendmsg" class="md-nav__link">
+    sendMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletemsg" class="md-nav__link">
+    deleteMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmsg" class="md-nav__link">
+    getMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getforwardmsg" class="md-nav__link">
+    getForwardMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendlike" class="md-nav__link">
+    sendLike()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupkick" class="md-nav__link">
+    setGroupKick()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupban" class="md-nav__link">
+    setGroupBan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupanonymousban" class="md-nav__link">
+    setGroupAnonymousBan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupwholeban" class="md-nav__link">
+    setGroupWholeBan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupadmin" class="md-nav__link">
+    setGroupAdmin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupanonymous" class="md-nav__link">
+    setGroupAnonymous()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupcard" class="md-nav__link">
+    setGroupCard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupname" class="md-nav__link">
+    setGroupName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupleave" class="md-nav__link">
+    setGroupLeave()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupspecialtitle" class="md-nav__link">
+    setGroupSpecialTitle()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfriendaddrequest" class="md-nav__link">
+    setFriendAddRequest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupaddrequest" class="md-nav__link">
+    setGroupAddRequest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogininfo" class="md-nav__link">
+    getLoginInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstrangerinfo" class="md-nav__link">
+    getStrangerInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfriendlist" class="md-nav__link">
+    getFriendList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgroupinfo" class="md-nav__link">
+    getGroupInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgrouplist" class="md-nav__link">
+    getGroupList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgroupmemberinfo" class="md-nav__link">
+    getGroupMemberInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgroupmemberlist" class="md-nav__link">
+    getGroupMemberList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgrouphonorinfo" class="md-nav__link">
+    getGroupHonorInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcookies" class="md-nav__link">
+    getCookies()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcsrftoken" class="md-nav__link">
+    getCsrfToken()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcredentials" class="md-nav__link">
+    getCredentials()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrecord" class="md-nav__link">
+    getRecord()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getimage" class="md-nav__link">
+    getImage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cansendimage" class="md-nav__link">
+    canSendImage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cansendrecord" class="md-nav__link">
+    canSendRecord()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstatus" class="md-nav__link">
+    getStatus()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversioninfo" class="md-nav__link">
+    getVersionInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrestartplugin" class="md-nav__link">
+    setRestartPlugin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleancache" class="md-nav__link">
+    cleanCache()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callextendedapi-api" class="md-nav__link">
+    callExtendedAPI() （扩充 API）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cqcode/" class="md-nav__link">
+        CQ 码（多媒体消息）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-util/" class="md-nav__link">
+        机器人消息处理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-token/" class="md-nav__link">
+        Token 验证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turing-api/" class="md-nav__link">
+        图灵机器人 API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        存储
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="存储" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          存储
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/light-cache/" class="md-nav__link">
+        LightCache 轻量缓存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/mysql/" class="md-nav__link">
+        MySQL 查询器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/mysql-db/" class="md-nav__link">
+        MySQL 查询器（废弃）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/redis/" class="md-nav__link">
+        Redis 数据库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/atomics/" class="md-nav__link">
+        ZMAtomic 原子计数器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/spin-lock/" class="md-nav__link">
+        SpinLock 自旋锁
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/data-provider/" class="md-nav__link">
+        文件管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        HTTP 服务器工具类
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="HTTP 服务器工具类" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP 服务器工具类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zmrequest/" class="md-nav__link">
+        HTTP 和 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../route-manager/" class="md-nav__link">
+        HTTP 路由管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        模块/插件管理
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="模块/插件管理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          模块/插件管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module/module-pack/" class="md-nav__link">
+        模块打包
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module/module-unpack/" class="md-nav__link">
+        模块解包
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coroutine-pool/" class="md-nav__link">
+        协程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleton-trait/" class="md-nav__link">
+        单例类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zmutil/" class="md-nav__link">
+        ZMUtil 杂项
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../global-functions/" class="md-nav__link">
+        全局方法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/" class="md-nav__link">
+        Console 终端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-worker/" class="md-nav__link">
+        TaskWorker 管理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remote-terminal/" class="md-nav__link">
+        Terminal 终端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        进阶开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="进阶开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          进阶开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/" class="md-nav__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/framework-structure/" class="md-nav__link">
+        框架剖析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/custom-start/" class="md-nav__link">
+        框架启动模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/manually-install/" class="md-nav__link">
+        手动安装环境
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/to-v2/" class="md-nav__link">
+        从 v1 升级
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/inside-class/" class="md-nav__link">
+        内部类文件手册
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/connect-ws-client/" class="md-nav__link">
+        接入 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/multi-process/" class="md-nav__link">
+        框架多进程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/task-worker/" class="md-nav__link">
+        TaskWorker 提高并发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      <label class="md-nav__link" for="__nav_4_10">
+        开发实战教程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发实战教程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          开发实战教程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/example/admin/" class="md-nav__link">
+        编写管理员才能触发的功能
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/usual-question/" class="md-nav__link">
+        框架常见问题（持续更新）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/address-already-in-use/" class="md-nav__link">
+        启动时报错 Address already in use
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/display-deadlock/" class="md-nav__link">
+        出现 deadlock 字样
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/light-cache-wrong/" class="md-nav__link">
+        使用 LightCache 关闭时无法正常保存持久化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/wait-message-cqbefore/" class="md-nav__link">
+        CQBefore 过滤不了 waitMessage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        更新日志
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="更新日志" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          更新日志
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/v2/" class="md-nav__link">
+        更新日志（v2）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/v1/" class="md-nav__link">
+        更新日志（v1）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/build-update/" class="md-nav__link">
+        更新日志（build update）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/config/" class="md-nav__link">
+        配置文件更新日志
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs-v1.zhamao.xin/" class="md-nav__link">
+        <u>炸毛框架 v1</u>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    属性
+  </a>
+  
+    <nav class="md-nav" aria-label="属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11api_normal" class="md-nav__link">
+    OneBotV11::API_NORMAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11api_async" class="md-nav__link">
+    OneBotV11::API_ASYNC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11api_rate_limited" class="md-nav__link">
+    OneBotV11::API_RATE_LIMITED
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    方法
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setprefix" class="md-nav__link">
+    setPrefix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcallback" class="md-nav__link">
+    setCallback()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getselfid" class="md-nav__link">
+    getSelfId()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11get" class="md-nav__link">
+    OneBotV11::get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11getrandom" class="md-nav__link">
+    OneBotV11::getRandom()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onebotv11getallrobot" class="md-nav__link">
+    OneBotV11::getAllRobot()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__construct" class="md-nav__link">
+    __construct()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    返回结果处理
+  </a>
+  
+    <nav class="md-nav" aria-label="返回结果处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    状态码和 Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    response 表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    机器人 API 方法
+  </a>
+  
+    <nav class="md-nav" aria-label="机器人 API 方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendprivatemsg" class="md-nav__link">
+    sendPrivateMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendgroupmsg" class="md-nav__link">
+    sendGroupMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendmsg" class="md-nav__link">
+    sendMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletemsg" class="md-nav__link">
+    deleteMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmsg" class="md-nav__link">
+    getMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getforwardmsg" class="md-nav__link">
+    getForwardMsg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendlike" class="md-nav__link">
+    sendLike()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupkick" class="md-nav__link">
+    setGroupKick()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupban" class="md-nav__link">
+    setGroupBan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupanonymousban" class="md-nav__link">
+    setGroupAnonymousBan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupwholeban" class="md-nav__link">
+    setGroupWholeBan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupadmin" class="md-nav__link">
+    setGroupAdmin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupanonymous" class="md-nav__link">
+    setGroupAnonymous()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupcard" class="md-nav__link">
+    setGroupCard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupname" class="md-nav__link">
+    setGroupName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupleave" class="md-nav__link">
+    setGroupLeave()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupspecialtitle" class="md-nav__link">
+    setGroupSpecialTitle()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfriendaddrequest" class="md-nav__link">
+    setFriendAddRequest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setgroupaddrequest" class="md-nav__link">
+    setGroupAddRequest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogininfo" class="md-nav__link">
+    getLoginInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstrangerinfo" class="md-nav__link">
+    getStrangerInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfriendlist" class="md-nav__link">
+    getFriendList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgroupinfo" class="md-nav__link">
+    getGroupInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgrouplist" class="md-nav__link">
+    getGroupList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgroupmemberinfo" class="md-nav__link">
+    getGroupMemberInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgroupmemberlist" class="md-nav__link">
+    getGroupMemberList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgrouphonorinfo" class="md-nav__link">
+    getGroupHonorInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcookies" class="md-nav__link">
+    getCookies()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcsrftoken" class="md-nav__link">
+    getCsrfToken()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcredentials" class="md-nav__link">
+    getCredentials()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrecord" class="md-nav__link">
+    getRecord()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getimage" class="md-nav__link">
+    getImage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cansendimage" class="md-nav__link">
+    canSendImage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cansendrecord" class="md-nav__link">
+    canSendRecord()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstatus" class="md-nav__link">
+    getStatus()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversioninfo" class="md-nav__link">
+    getVersionInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrestartplugin" class="md-nav__link">
+    setRestartPlugin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleancache" class="md-nav__link">
+    cleanCache()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callextendedapi-api" class="md-nav__link">
+    callExtendedAPI() （扩充 API）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/zhamao-robot/zhamao-framework/blob/master/docs/component/bot/robot-api.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="apionebotv11">机器人 API（OneBotV11）</h1>
+<p>OneBotV11 类是封装好的 OneBot 标准的 API 接口调用类，可以在机器人连接后通过连接或者机器人 QQ 号获取对象并调用接口（如发送群消息、获取群列表等操作）。</p>
+<table>
+<thead>
+<tr>
+<th>属性项</th>
+<th>属性值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名称</td>
+<td>OneBotV11</td>
+<td></td>
+</tr>
+<tr>
+<td>类型</td>
+<td>实例化类</td>
+<td><code>$r = new OneBotV11($conn)</code></td>
+</tr>
+<tr>
+<td>命名空间</td>
+<td><code>ZM\API\OneBotV11</code></td>
+<td>使用前先 <code>use ZM\API\OneBotV11;</code></td>
+</tr>
+<tr>
+<td>别名</td>
+<td><code>ZM\API\ZMRobot</code></td>
+<td>此类目前是 <code>extends OneBotV11</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>你也可以继续使用 2.5 版本之前的别名类 <code>ZMRobot</code>，但未来框架将会优先兼容 OneBot V12 版本的协议，可能会造成更新问题，建议切换为 OneBotV11 类。</p>
+</blockquote>
+<h2 id="_1">属性</h2>
+<p>对象属性方法是对 API 的调整，例如是否以 <code>_async</code>、<code>_rate_limited</code> 后缀发送 API、设置协程返回还是异步返回结果等。</p>
+<h3 id="onebotv11api_normal">OneBotV11::API_NORMAL</h3>
+<p>以默认（无后缀）方式请求 API。</p>
+<h3 id="onebotv11api_async">OneBotV11::API_ASYNC</h3>
+<p>以后缀 <code>_async</code> 方式异步请求 API。</p>
+<h3 id="onebotv11api_rate_limited">OneBotV11::API_RATE_LIMITED</h3>
+<p>以后缀 <code>_rate_limited</code> 方式请求 API。</p>
+<h2 id="_2">方法</h2>
+<h3 id="setprefix">setPrefix()</h3>
+<p>设置后缀。目前支持 <code>_async</code>、<code>_rate_limited</code>。</p>
+<ul>
+<li><strong>prefix</strong>: <code>int</code> <code>默认:API_NORMAL</code>，可选 <code>OneBotV11::API_NORMAL</code>、<code>OneBotV11::API_ASYNC</code>、<code>OneBotV11::API_RATE_LIMITED</code></li>
+</ul>
+<p>设置后缀后，请求的 API 会发生变化。例如发送私聊消息：<code>sendPrivateMsg()</code>，请求的 API 为 <code>send_private_msg_async</code>，详见 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/api/README.md">OneBot 文档</a>。</p>
+<h3 id="setcallback">setCallback()</h3>
+<p>设置 API 结果返回方式。默认为 true，就是直接通过框架处理后接收回包直接返回给结果。如果为 false，则 API 请求后只返回是否成功推送出 WS 数据包。</p>
+<h3 id="getselfid">getSelfId()</h3>
+<p>获取当前对象的机器人 QQ 或 OneBot 实例的 ID。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$bot = OneBotV11::get(123456);</span>
+<span class="x">echo $bot-&gt;getSelfId(); //123456</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="onebotv11get">OneBotV11::get()</h3>
+<p>静态方法，用来通过机器人 QQ 或 OneBot 实例的 ID 获取 OneBotV11对象。</p>
+<p>参数：<code>$robot_id</code>，必填。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$r = OneBotV11::get(123456); </span>
+<span class="x">$r-&gt;sendPrivateMsg(55555, &quot;hello&quot;);</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="onebotv11getrandom">OneBotV11::getRandom()</h3>
+<p>静态方法，随机获取一个连接到框架的机器人（多个机器人实例连接到框架时适用）。</p>
+<p>如果框架没有连接到任何机器人实例，则会抛出一个异常：<code>ZM\Exception\RobotNotFoundException</code>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">try {</span>
+<span class="x">    $bot = OneBotV11::getRandom();</span>
+<span class="x">    $bot-&gt;sendPrivateMsg(55555, &quot;foo&quot;);</span>
+<span class="x">} catch (\ZM\Exception\RobotNotFoundException $e) {</span>
+<span class="x">    echo &quot;还没有机器人连接到框架！\n&quot;;</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="onebotv11getallrobot">OneBotV11::getAllRobot()</h3>
+<p>获取所有连接到框架的机器人的 OneBotV11 对象。</p>
+<p>返回值：<code>OneBotV11[]</code>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$all = OneBotV11::getAllRobot();</span>
+<span class="x">foreach($all as $v) {</span>
+<span class="x">    $v-&gt;sendPrivateMsg(55555, &quot;机器人轮流给一个人发消息啦！&quot;);</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="__construct">__construct()</h3>
+<p>构造方法。</p>
+<p>参数：<code>$connection</code>：炸毛框架内部的连接对象，必填参数。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">//从上下文获取 Websocket 连接对象</span>
+<span class="x">$conn = ctx()-&gt;getConnection();</span>
+<span class="x">$bot = new OneBotV11($conn);</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="_3">返回结果处理</h2>
+<p>因为框架的机器人是兼容 OneBot 标准的（原 CQHTTP），所以每次接收发送 API 请求的结果都是大体一样的结构。我们以 <code>sendPrivateMsg()</code> 为例，因为发送出去的每一条消息都会在 OneBot 实例（如 CQHTTP 插件、go-cqhttp 等）中对应一个消息 ID，以供我们核查消息和后续撤回等操作需要。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$bot = OneBotV11::get(&quot;123456&quot;); // 机器人QQ号</span>
+<span class="x">$obj = $bot-&gt;sendGroupMsg(&quot;234567&quot;, &quot;你好&quot;);</span>
+<span class="x">echo json_encode($obj, 128|256);</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">//</span> <span class="err">输出结果</span>
+<span class="p">{</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;retcode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;message_id&quot;</span><span class="p">:</span> <span class="mi">1243</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>如上，<code>$obj</code> 就是我们的回包内容，我们通过调用 <code>sendPrivateMsg()</code> 这个 API 后，会拿到机器人发送此条消息的消息 ID，然后可以通过它来进行其他操作（例如撤回）。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$result = $bot-&gt;deleteMsg($obj[&quot;data&quot;][&quot;message_id&quot;]);</span>
+<span class="x">vardump($result[&quot;retcode&quot;]); //如果成功撤回，输出 int(0)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="data">状态码和 Data</h3>
+<p>状态码一般情况成功都是 0 或者 200，在过去，炸毛框架兼容 CQHTTP 插件时，错误码的标准按照 CYKU 给出的标准编写，不同的 OneBot 标准的实现，可能有不同的数值，需要根据你对接的机器人客户端进行适配。</p>
+<p>结果中返回的 <code>data</code> 字段根据下方不同 API 的调用而不同，具体查看每个 API 写明的 <code>响应数据</code> 表格。</p>
+<h3 id="response">response 表</h3>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>String</td>
+<td>"ok"</td>
+<td>状态码说明</td>
+</tr>
+<tr>
+<td><code>retcode</code></td>
+<td>number</td>
+<td>0</td>
+<td>返回状态码</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>array</td>
+<td>见 data 表</td>
+<td>根据不同的 API 返回不同</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api">机器人 API 方法</h2>
+<h3 id="sendprivatemsg">sendPrivateMsg()</h3>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>对方 QQ 号</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>message</td>
+<td>-</td>
+<td>要发送的内容</td>
+</tr>
+<tr>
+<td><code>auto_escape</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>消息内容是否作为纯文本发送（即不解析 CQ 码），只在 <code>message</code> 字段是字符串时有效</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_id</code></td>
+<td>number (int32)</td>
+<td>消息 ID</td>
+</tr>
+</tbody>
+</table>
+<p>例子</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">代码</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$bot = OneBotV11::get(123456); // 123456是你的机器人QQ</span>
+<span class="x">$bot-&gt;sendPrivateMsg(&quot;627577391&quot;, &quot;你好啊！你好你好！&quot;);</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">效果</label><div class="tabbed-content">
+<p><chat-box>
+( 你好啊！你好你好！
+</chat-box></p>
+</div>
+</div>
+<h3 id="sendgroupmsg">sendGroupMsg()</h3>
+<p>发送群组消息。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>message</td>
+<td>-</td>
+<td>要发送的内容</td>
+</tr>
+<tr>
+<td><code>auto_escape</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>消息内容是否作为纯文本发送（即不解析 CQ 码），只在 <code>message</code> 字段是字符串时有效</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_id</code></td>
+<td>number (int32)</td>
+<td>消息 ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sendmsg">sendMsg()</h3>
+<p>发送消息。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_type</code></td>
+<td>string</td>
+<td>-</td>
+<td>消息类型，支持 <code>private</code>、<code>group</code>、<code>discuss</code>，分别对应私聊、群组、讨论组，如不传入，则根据传入的 <code>*_id</code> 参数判断</td>
+</tr>
+<tr>
+<td><code>target_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>目标号码，如 QQ 号，群号，讨论组号</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>message</td>
+<td>-</td>
+<td>要发送的内容</td>
+</tr>
+<tr>
+<td><code>auto_escape</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>消息内容是否作为纯文本发送（即不解析 CQ 码），只在 <code>message</code> 字段是字符串时有效</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_id</code></td>
+<td>number (int32)</td>
+<td>消息 ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deletemsg">deleteMsg()</h3>
+<p>撤回消息。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_id</code></td>
+<td>number (int32)</td>
+<td>-</td>
+<td>消息 ID</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="getmsg">getMsg()</h3>
+<p>获取消息。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>消息 ID</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>time</code></td>
+<td>number (int32)</td>
+<td>发送时间</td>
+</tr>
+<tr>
+<td><code>message_type</code></td>
+<td>string</td>
+<td>消息类型，同 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/event/message.md">消息事件</a></td>
+</tr>
+<tr>
+<td><code>message_id</code></td>
+<td>number (int32)</td>
+<td>消息 ID</td>
+</tr>
+<tr>
+<td><code>real_id</code></td>
+<td>number (int32)</td>
+<td>消息真实 ID</td>
+</tr>
+<tr>
+<td><code>sender</code></td>
+<td>object</td>
+<td>发送人信息，同 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/event/message.md">消息事件</a></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>message</td>
+<td>消息内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getforwardmsg">getForwardMsg()</h3>
+<p>获取合并转发消息。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>合并转发 ID</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td>message</td>
+<td>消息内容，使用 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/message/array.md">消息的数组格式</a> 表示，数组中的消息段全部为 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/message/segment.md#合并转发自定义节点"><code>node</code> 消息段</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sendlike">sendLike()</h3>
+<p>发送好友赞。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>对方 QQ 号</td>
+</tr>
+<tr>
+<td><code>times</code></td>
+<td>number</td>
+<td>1</td>
+<td>赞的次数，每个好友每天最多 10 次</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<p>无</p>
+<h3 id="setgroupkick">setGroupKick()</h3>
+<p>群组踢人。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>要踢的 QQ 号</td>
+</tr>
+<tr>
+<td><code>reject_add_request</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>拒绝此人的加群请求</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupban">setGroupBan()</h3>
+<p>群组单人禁言。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>要禁言的 QQ 号</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>number</td>
+<td><code>30 * 60</code></td>
+<td>禁言时长，单位秒，0 表示取消禁言</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupanonymousban">setGroupAnonymousBan()</h3>
+<p>群组匿名用户禁言。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>anonymous_or_flag</code></td>
+<td>object 或 string</td>
+<td>-</td>
+<td>要禁言的匿名用户对象（群消息上报的 <code>anonymous</code> 字段）或用户的 flag</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>number</td>
+<td><code>30 * 60</code></td>
+<td>禁言时长，单位秒，无法取消匿名用户禁言</td>
+</tr>
+</tbody>
+</table>
+<p>上面的 <code>anonymous_or_flag</code> 两者任选其一传入即可。</p>
+<p>响应数据：无</p>
+<h3 id="setgroupwholeban">setGroupWholeBan()</h3>
+<p>群组全员禁言</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>enable</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>是否禁言</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupadmin">setGroupAdmin()</h3>
+<p>群组设置管理员</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>要设置管理员的 QQ 号</td>
+</tr>
+<tr>
+<td><code>enable</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>true 为设置，false 为取消</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupanonymous">setGroupAnonymous()</h3>
+<p>群组匿名</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>enable</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>是否允许匿名聊天</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupcard">setGroupCard()</h3>
+<p>设置群名片（群备注）</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>要设置的 QQ 号</td>
+</tr>
+<tr>
+<td><code>card</code></td>
+<td>string</td>
+<td>空</td>
+<td>群名片内容，不填或空字符串表示删除群名片</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupname">setGroupName()</h3>
+<p>设置群名。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number (int64)</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>group_name</code></td>
+<td>string</td>
+<td>新群名</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupleave">setGroupLeave()</h3>
+<p>退出群组</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>is_dismiss</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>是否解散，如果登录号是群主，则仅在此项为 true 时能够解散</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupspecialtitle">setGroupSpecialTitle()</h3>
+<p>设置群组专属头衔</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>要设置的 QQ 号</td>
+</tr>
+<tr>
+<td><code>special_title</code></td>
+<td>string</td>
+<td>空</td>
+<td>专属头衔，不填或空字符串表示删除专属头衔</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>number</td>
+<td><code>-1</code></td>
+<td>专属头衔有效期，单位秒，-1 表示永久，不过此项似乎没有效果，可能是只有某些特殊的时间长度有效，有待测试</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setfriendaddrequest">setFriendAddRequest()</h3>
+<p>处理加好友请求</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flag</code></td>
+<td>string</td>
+<td>-</td>
+<td>加好友请求的 flag（需从上报的数据中获得）</td>
+</tr>
+<tr>
+<td><code>approve</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>是否同意请求</td>
+</tr>
+<tr>
+<td><code>remark</code></td>
+<td>string</td>
+<td>空</td>
+<td>添加后的好友备注（仅在同意时有效）</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="setgroupaddrequest">setGroupAddRequest()</h3>
+<p>处理加群请求 / 邀请</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flag</code></td>
+<td>string</td>
+<td>-</td>
+<td>加群请求的 flag（需从上报的数据中获得）</td>
+</tr>
+<tr>
+<td><code>sub_type</code></td>
+<td>string</td>
+<td>-</td>
+<td><code>add</code> 或 <code>invite</code>，请求类型（需要和上报消息中的 <code>sub_type</code> 字段相符）</td>
+</tr>
+<tr>
+<td><code>approve</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>是否同意请求／邀请</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td>string</td>
+<td>空</td>
+<td>拒绝理由（仅在拒绝时有效）</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据无</p>
+<h3 id="getlogininfo">getLoginInfo()</h3>
+<p>获取登录号信息</p>
+<p>参数：无</p>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number (int64)</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>string</td>
+<td>QQ 昵称</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getstrangerinfo">getStrangerInfo()</h3>
+<p>获取陌生人信息</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>no_cache</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>是否不使用缓存（使用缓存可能更新不及时，但响应更快）</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number (int64)</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>string</td>
+<td>性别，<code>male</code> 或 <code>female</code> 或 <code>unknown</code></td>
+</tr>
+<tr>
+<td><code>age</code></td>
+<td>number (int32)</td>
+<td>年龄</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getfriendlist">getFriendList()</h3>
+<p>获取好友列表</p>
+<p>参数：无</p>
+<p>响应数据</p>
+<p>响应内容为 JSON 数组，每个元素如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number (int64)</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>remark</code></td>
+<td>string</td>
+<td>备注名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getgroupinfo">getGroupInfo()</h3>
+<p>获取群信息</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>no_cache</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>是否不使用缓存（使用缓存可能更新不及时，但响应更快）</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number (int64)</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>group_name</code></td>
+<td>string</td>
+<td>群名称</td>
+</tr>
+<tr>
+<td><code>member_count</code></td>
+<td>number (int32)</td>
+<td>成员数</td>
+</tr>
+<tr>
+<td><code>max_member_count</code></td>
+<td>number (int32)</td>
+<td>最大成员数（群容量）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getgrouplist">getGroupList()</h3>
+<p>获取群列表</p>
+<p>参数：无</p>
+<p>响应数据</p>
+<p>响应内容为 JSON 数组，每个元素如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number (int64)</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>group_name</code></td>
+<td>string</td>
+<td>群名称</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getgroupmemberinfo">getGroupMemberInfo()</h3>
+<p>获取群成员信息</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>no_cache</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>是否不使用缓存（使用缓存可能更新不及时，但响应更快）</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number (int64)</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>number (int64)</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>card</code></td>
+<td>string</td>
+<td>群名片／备注</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>string</td>
+<td>性别，<code>male</code> 或 <code>female</code> 或 <code>unknown</code></td>
+</tr>
+<tr>
+<td><code>age</code></td>
+<td>number (int32)</td>
+<td>年龄</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>string</td>
+<td>地区</td>
+</tr>
+<tr>
+<td><code>join_time</code></td>
+<td>number (int32)</td>
+<td>加群时间戳</td>
+</tr>
+<tr>
+<td><code>last_sent_time</code></td>
+<td>number (int32)</td>
+<td>最后发言时间戳</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td>string</td>
+<td>成员等级</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>string</td>
+<td>角色，<code>owner</code> 或 <code>admin</code> 或 <code>member</code></td>
+</tr>
+<tr>
+<td><code>unfriendly</code></td>
+<td>boolean</td>
+<td>是否不良记录成员</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>专属头衔</td>
+</tr>
+<tr>
+<td><code>title_expire_time</code></td>
+<td>number (int32)</td>
+<td>专属头衔过期时间戳</td>
+</tr>
+<tr>
+<td><code>card_changeable</code></td>
+<td>boolean</td>
+<td>是否允许修改群名片</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getgroupmemberlist">getGroupMemberList()</h3>
+<p>获取群成员列表</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<p>响应内容为 JSON 数组，每个元素的内容和上面的 <code>/get_group_member_info</code> 接口相同，但对于同一个群组的同一个成员，获取列表时和获取单独的成员信息时，某些字段可能有所不同，例如 <code>area</code>、<code>title</code> 等字段在获取列表时无法获得，具体应以单独的成员信息为准。</p>
+<h3 id="getgrouphonorinfo">getGroupHonorInfo()</h3>
+<p>获取群荣誉信息。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number (int64)</td>
+<td>-</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>-</td>
+<td>要获取的群荣誉类型，可传入 <code>talkative</code> <code>performer</code> <code>legend</code> <code>strong_newbie</code> <code>emotion</code> 以分别获取单个类型的群荣誉数据，或传入 <code>all</code> 获取所有数据</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_id</code></td>
+<td>number (int64)</td>
+<td>群号</td>
+</tr>
+<tr>
+<td><code>current_talkative</code></td>
+<td>object</td>
+<td>当前龙王，仅 <code>type</code> 为 <code>talkative</code> 或 <code>all</code> 时有数据</td>
+</tr>
+<tr>
+<td><code>talkative_list</code></td>
+<td>array</td>
+<td>历史龙王，仅 <code>type</code> 为 <code>talkative</code> 或 <code>all</code> 时有数据</td>
+</tr>
+<tr>
+<td><code>performer_list</code></td>
+<td>array</td>
+<td>群聊之火，仅 <code>type</code> 为 <code>performer</code> 或 <code>all</code> 时有数据</td>
+</tr>
+<tr>
+<td><code>legend_list</code></td>
+<td>array</td>
+<td>群聊炽焰，仅 <code>type</code> 为 <code>legend</code> 或 <code>all</code> 时有数据</td>
+</tr>
+<tr>
+<td><code>strong_newbie_list</code></td>
+<td>array</td>
+<td>冒尖小春笋，仅 <code>type</code> 为 <code>strong_newbie</code> 或 <code>all</code> 时有数据</td>
+</tr>
+<tr>
+<td><code>emotion_list</code></td>
+<td>array</td>
+<td>快乐之源，仅 <code>type</code> 为 <code>emotion</code> 或 <code>all</code> 时有数据</td>
+</tr>
+</tbody>
+</table>
+<p>其中 <code>current_talkative</code> 字段的内容如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number (int64)</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>avatar</code></td>
+<td>string</td>
+<td>头像 URL</td>
+</tr>
+<tr>
+<td><code>day_count</code></td>
+<td>number (int32)</td>
+<td>持续天数</td>
+</tr>
+</tbody>
+</table>
+<p>其它各 <code>*_list</code> 的每个元素是一个 JSON 对象，内容如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>number (int64)</td>
+<td>QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>avatar</code></td>
+<td>string</td>
+<td>头像 URL</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>荣誉描述</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getcookies">getCookies()</h3>
+<p>获取 Cookies。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>目前开源的 mirai 为底层的机器人客户端均不支持获取 Cookies 和 CSRF Token，包括 go-cqhttp。</p>
+</div>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td>string</td>
+<td>空</td>
+<td>需要获取 cookies 的域名</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cookies</code></td>
+<td>string</td>
+<td>Cookies</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getcsrftoken">getCsrfToken()</h3>
+<p>获取 CSRF Token</p>
+<p>参数：无</p>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td>number (int32)</td>
+<td>CSRF Token</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getcredentials">getCredentials()</h3>
+<p>获取 QQ 相关接口凭证，即上面两个合并。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td>string</td>
+<td>空</td>
+<td>需要获取 cookies 的域名</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cookies</code></td>
+<td>string</td>
+<td>Cookies</td>
+</tr>
+<tr>
+<td><code>csrf_token</code></td>
+<td>number (int32)</td>
+<td>CSRF Token</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getrecord">getRecord()</h3>
+<p>获取语音。其实并不是真的获取语音，而是转换语音到指定的格式。</p>
+<blockquote>
+<p><strong>提示</strong>：要使用此接口，通常需要安装 ffmpeg，请参考 OneBot 实现的相关说明。</p>
+</blockquote>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>string</td>
+<td>-</td>
+<td>收到的语音文件名（CQ 码的 <code>file</code> 参数），如 <code>0B38145AA44505000B38145AA4450500.silk</code></td>
+</tr>
+<tr>
+<td><code>out_format</code></td>
+<td>string</td>
+<td>-</td>
+<td>要转换到的格式，目前支持 <code>mp3</code>、<code>amr</code>、<code>wma</code>、<code>m4a</code>、<code>spx</code>、<code>ogg</code>、<code>wav</code>、<code>flac</code></td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>string</td>
+<td>转换后的语音文件路径，如 <code>/home/somebody/cqhttp/data/record/0B38145AA44505000B38145AA4450500.mp3</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getimage">getImage()</h3>
+<p>获取图片。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>string</td>
+<td>-</td>
+<td>收到的图片文件名（CQ 码的 <code>file</code> 参数），如 <code>6B4DE3DFD1BD271E3297859D41C530F5.jpg</code></td>
+</tr>
+</tbody>
+</table>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>string</td>
+<td>下载后的图片文件路径，如 <code>/home/somebody/cqhttp/data/image/6B4DE3DFD1BD271E3297859D41C530F5.jpg</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cansendimage">canSendImage()</h3>
+<p>检查是否可以发送图片。</p>
+<p>参数：无</p>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yes</code></td>
+<td>boolean</td>
+<td>是或否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cansendrecord">canSendRecord()</h3>
+<p>检查是否可以发送语音，返回同上。</p>
+<h3 id="getstatus">getStatus()</h3>
+<p>获取插件运行状态。</p>
+<p>参数：无</p>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>online</code></td>
+<td>boolean</td>
+<td>当前 QQ 在线，<code>null</code> 表示无法查询到在线状态</td>
+</tr>
+<tr>
+<td><code>good</code></td>
+<td>boolean</td>
+<td>状态符合预期，意味着各模块正常运行、功能正常，且 QQ 在线</td>
+</tr>
+<tr>
+<td>......</td>
+<td>-</td>
+<td>OneBot 实例自行添加的其他内容</td>
+</tr>
+</tbody>
+</table>
+<p>通常情况下建议只使用 <code>online</code> 和 <code>good</code> 这两个字段来判断运行状态，因为根据 OneBot 实现的不同，其它字段可能完全不同。</p>
+<h3 id="getversioninfo">getVersionInfo()</h3>
+<p>获取版本信息</p>
+<p>响应数据</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_name</code></td>
+<td>string</td>
+<td>应用标识，如 <code>mirai-native</code></td>
+</tr>
+<tr>
+<td><code>app_version</code></td>
+<td>string</td>
+<td>应用版本，如 <code>1.2.3</code></td>
+</tr>
+<tr>
+<td><code>protocol_version</code></td>
+<td>string</td>
+<td>OneBot 标准版本，如 <code>v11</code></td>
+</tr>
+<tr>
+<td>……</td>
+<td>-</td>
+<td>OneBot 实现自行添加的其它内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setrestartplugin">setRestartPlugin()</h3>
+<p>重启 OneBot 客户端</p>
+<p>由于重启 OneBot 实现同时需要重启 API 服务，这意味着当前的 API 请求会被中断，因此需要异步地重启，接口返回的 <code>status</code> 是 <code>async</code>。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delay</code></td>
+<td>number</td>
+<td><code>0</code></td>
+<td>要延迟的毫秒数，如果默认情况下无法重启，可以尝试设置延迟为 2000 左右</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据：无</p>
+<h3 id="cleancache">cleanCache()</h3>
+<p>清理 OneBot 客户端的缓存。</p>
+<p>参数：无</p>
+<p>响应数据：无</p>
+<h3 id="callextendedapi-api">callExtendedAPI() （扩充 API）</h3>
+<p>用来调用 OneBot 标准之外扩展出来的自定义 API。</p>
+<p>使用不同 OneBot 客户端时，可能有一些 API 不在上方的 OneBot 标准里，这时可以使用此方法进行额外调用。</p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>数据类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td>array</td>
+<td><code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<p>例子</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$result = $bot-&gt;callExtendedAPI(&quot;get_group_root_files&quot;, [&quot;group_id&quot; =&gt; 123456]); </span>
+<span class="x">//这里以 go-cqhttp 扩展的一个获取群文件的 API 为例</span>
+<span class="x">var_dump($result[&quot;data&quot;]); </span>
+<span class="x">// 输出群文件列表</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../context/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 上下文" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              上下文
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../cqcode/" class="md-footer__link md-footer__link--next" aria-label="下一页: CQ 码（多媒体消息）" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              CQ 码（多媒体消息）
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2021 CrazyBot Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx-switch"> <button data-md-color-scheme="default"><code>默认模式</code></button> <button data-md-color-scheme="slate"><code>暗黑模式</code></button> </span>
+<script> var buttons = document.querySelectorAll("button[data-md-color-scheme]"); buttons.forEach(function(button) { button.addEventListener("click", function() { var attr = this.getAttribute("data-md-color-scheme"); setCookie("_theme", attr); document.body.setAttribute("data-md-color-scheme", attr); var name = document.querySelector("#__code_0 code span:nth-child(7)"); name.textContent = attr; }) }) </script><br><a href="http://beian.miit.gov.cn">沪ICP备2021010446号-1</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

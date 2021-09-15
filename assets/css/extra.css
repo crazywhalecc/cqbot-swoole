@@ -1,0 +1,103 @@
+
+.md-header-nav__button.md-logo {
+    padding: .2rem;
+    margin: .2rem;
+}
+
+.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.doc-chat-container {
+    border-radius: 6px;
+    width: 100%;
+    min-height: 30px;
+    /*noinspection CssUnresolvedCustomProperty*/
+    background-color: var(--md-code-bg-color);
+    padding: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.doc-chat-row {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+
+.doc-chat-banner {
+    justify-content: center;
+    background: rgba(0,0,0,0.1);
+    width: max-content;
+    margin: 8px auto;
+    padding: 4px 14px;
+    border-radius: 8px;
+    color: gray;
+    font-size: 14px;
+}
+
+.doc-chat-row-robot {
+    justify-content: flex-start !important;
+}
+
+.doc-chat-box {
+    color: #000000de;
+    position: relative;
+    width: fit-content;
+    max-width: 55%;
+    border-radius: .5rem;
+    padding: .4rem .6rem;
+    margin: .4rem .8rem;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    outline: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+
+.doc-chat-box:after {
+    content: "";
+    position: absolute;
+    right: auto;
+    top: 0;
+    width: 8px;
+    height: 12px;
+    color: #fff;
+    border: 0 solid transparent;
+    border-bottom: 7px solid;
+    border-radius: 0 0 8px 0;
+    left: calc(100% - 4px);
+    box-sizing: inherit;
+}
+
+.doc-chat-box-robot:after {
+    content: "";
+    position: absolute;
+    right: calc(100% - 4px);
+    top: 0;
+    width: 8px;
+    height: 12px;
+    color: #fff;
+    border: 0 solid transparent;
+    border-bottom: 7px solid;
+    border-radius: 0 0 0 8px;
+    left: auto;
+    box-sizing: inherit;
+}
+
+.doc-chat-avatar {
+    background-color: aquamarine;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 18px;
+}
+
+.md-typeset .admonition, .md-typeset details {
+    font-size: .72rem;
+}

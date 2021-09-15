@@ -1,0 +1,2178 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>快速上手（机器人篇） - 炸毛框架文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="炸毛框架文档" class="md-header__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../assets/logos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            炸毛框架文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              快速上手（机器人篇）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../event/" class="md-tabs__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../component/" class="md-tabs__link">
+        框架组件
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../advanced/" class="md-tabs__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/FAQ/" class="md-tabs__link">
+        FAQ
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../update/v2/" class="md-tabs__link">
+        更新日志
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs-v1.zhamao.xin/" class="md-tabs__link">
+      <u>炸毛框架 v1</u>
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="炸毛框架文档" class="md-nav__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../assets/logos.png" alt="logo">
+
+    </a>
+    炸毛框架文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        安装框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          快速上手（机器人篇）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        快速上手（机器人篇）
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    机器人客户端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    第一次对话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    编写一个命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    使用机器人 API 和事件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart-http/" class="md-nav__link">
+        快速上手（HTTP篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onebot-choose/" class="md-nav__link">
+        选择聊天机器人实例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-config/" class="md-nav__link">
+        基本配置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../write-module/" class="md-nav__link">
+        编写模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../register-event/" class="md-nav__link">
+        注册事件响应
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errcode/" class="md-nav__link">
+        错误码对照表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        事件和注解
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="事件和注解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          事件和注解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/" class="md-nav__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/robot-annotations/" class="md-nav__link">
+        机器人注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/route-annotations/" class="md-nav__link">
+        HTTP 路由注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/framework-annotations/" class="md-nav__link">
+        框架核心注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/middleware/" class="md-nav__link">
+        中间件注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/custom-annotations/" class="md-nav__link">
+        自定义注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/event-dispatcher/" class="md-nav__link">
+        事件分发器
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        框架组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="框架组件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          框架组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/" class="md-nav__link">
+        框架组件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/context/" class="md-nav__link">
+        上下文
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        聊天机器人组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="聊天机器人组件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          聊天机器人组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/robot-api/" class="md-nav__link">
+        机器人 API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/cqcode/" class="md-nav__link">
+        CQ 码（多媒体消息）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/message-util/" class="md-nav__link">
+        机器人消息处理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/access-token/" class="md-nav__link">
+        Token 验证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/bot/turing-api/" class="md-nav__link">
+        图灵机器人 API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        存储
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="存储" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          存储
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/light-cache/" class="md-nav__link">
+        LightCache 轻量缓存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/mysql/" class="md-nav__link">
+        MySQL 查询器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/mysql-db/" class="md-nav__link">
+        MySQL 查询器（废弃）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/redis/" class="md-nav__link">
+        Redis 数据库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/atomics/" class="md-nav__link">
+        ZMAtomic 原子计数器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/spin-lock/" class="md-nav__link">
+        SpinLock 自旋锁
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/store/data-provider/" class="md-nav__link">
+        文件管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        HTTP 服务器工具类
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="HTTP 服务器工具类" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP 服务器工具类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/zmrequest/" class="md-nav__link">
+        HTTP 和 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/route-manager/" class="md-nav__link">
+        HTTP 路由管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        模块/插件管理
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="模块/插件管理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          模块/插件管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/module/module-pack/" class="md-nav__link">
+        模块打包
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/module/module-unpack/" class="md-nav__link">
+        模块解包
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/coroutine-pool/" class="md-nav__link">
+        协程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/singleton-trait/" class="md-nav__link">
+        单例类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/zmutil/" class="md-nav__link">
+        ZMUtil 杂项
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/global-functions/" class="md-nav__link">
+        全局方法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/console/" class="md-nav__link">
+        Console 终端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/task-worker/" class="md-nav__link">
+        TaskWorker 管理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../component/remote-terminal/" class="md-nav__link">
+        Terminal 终端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        进阶开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="进阶开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          进阶开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/" class="md-nav__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/framework-structure/" class="md-nav__link">
+        框架剖析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/custom-start/" class="md-nav__link">
+        框架启动模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/manually-install/" class="md-nav__link">
+        手动安装环境
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/to-v2/" class="md-nav__link">
+        从 v1 升级
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/inside-class/" class="md-nav__link">
+        内部类文件手册
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/connect-ws-client/" class="md-nav__link">
+        接入 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/multi-process/" class="md-nav__link">
+        框架多进程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/task-worker/" class="md-nav__link">
+        TaskWorker 提高并发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      <label class="md-nav__link" for="__nav_4_10">
+        开发实战教程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发实战教程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          开发实战教程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/example/admin/" class="md-nav__link">
+        编写管理员才能触发的功能
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/usual-question/" class="md-nav__link">
+        框架常见问题（持续更新）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/address-already-in-use/" class="md-nav__link">
+        启动时报错 Address already in use
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/display-deadlock/" class="md-nav__link">
+        出现 deadlock 字样
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/light-cache-wrong/" class="md-nav__link">
+        使用 LightCache 关闭时无法正常保存持久化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/wait-message-cqbefore/" class="md-nav__link">
+        CQBefore 过滤不了 waitMessage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        更新日志
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="更新日志" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          更新日志
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/v2/" class="md-nav__link">
+        更新日志（v2）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/v1/" class="md-nav__link">
+        更新日志（v1）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/build-update/" class="md-nav__link">
+        更新日志（build update）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/config/" class="md-nav__link">
+        配置文件更新日志
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs-v1.zhamao.xin/" class="md-nav__link">
+        <u>炸毛框架 v1</u>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    机器人客户端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    第一次对话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    编写一个命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    使用机器人 API 和事件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/zhamao-robot/zhamao-framework/blob/master/docs/guide/quickstart-robot.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="-">快速上手 - 机器人篇</h1>
+<h2 id="_1">简介</h2>
+<p>看到这里，你已经完成了前面的环境部署，到了最关键的第一步了！</p>
+<p>一切都安装成功后，你就已经做好了进行简单配置以运行一个最小的 <strong>机器人问答模块</strong> 的准备。</p>
+<p>炸毛框架和机器人客户端是什么关系呢？炸毛框架就好比我们传统的一系列例如 Spring 框架、ThinkPHP 框架等，是服务端，而机器人客户端是一个 HTTP / WebSocket 客户端，时刻准备着连接到炸毛框架。</p>
+<h2 id="_2">机器人客户端</h2>
+<p>开发之前请注意，<strong>机器人客户端和框架相互独立！</strong>故有关<strong>机器人客户端</strong>出现的问题请到对应机器人客户端开发者或 GitHub 项目中咨询和讨论，炸毛框架为对接机器人客户端的一个快速开发的框架。</p>
+<p>机器人客户端是炸毛框架以外的程序或软件，目前炸毛框架支持的机器人客户端通信标准为 OneBot 标准（原 CQHTTP），只要你的机器人客户端是 OneBot 标准的，就可以和炸毛框架进行无缝对接。</p>
+<p>OneBot 机器人部分的选择详情见 <a href="/guide/OneBot实例/">OneBot 实例</a>。</p>
+<p>这里以炸毛框架开发过程中使用的 <a href="https://github.com/Mrs4s/go-cqhttp">go-cqhttp</a> 来举例进行第一个机器人的配置工作。</p>
+<p>简要步骤描述为：</p>
+<ol>
+<li>下载 go-cqhttp 对应平台的 <a href="https://github.com/Mrs4s/go-cqhttp/releases">release 文件</a></li>
+<li>双击 exe 文件或者使用 <code>./go-cqhttp</code> 启动</li>
+<li>生成默认配置文件并修改默认配置</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>由于 go-cqhttp 项目还处于开发期，而且配置文件格式也发生了多次变化，但大体内容没有变（比如编写此文档时发布的版本中配置文件格式变成了 <code>hjson</code> 取代了原来的 <code>json</code>。</p>
+</div>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">config.yml（最新格式）</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">account</span><span class="p">:</span> <span class="c1"># 账号相关</span>
+<span class="hll">  <span class="nt">uin</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1233456</span> <span class="c1"># QQ账号</span>
+</span><span class="hll">  <span class="nt">password</span><span class="p">:</span> <span class="s">&#39;&#39;</span> <span class="c1"># 密码为空时使用扫码登录</span>
+</span>  <span class="nt">encrypt</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>  <span class="c1"># 是否开启密码加密</span>
+  <span class="nt">status</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>      <span class="c1"># 在线状态 请参考 https://github.com/Mrs4s/go-cqhttp/blob/dev/docs/config.md#在线状态</span>
+  <span class="nt">relogin</span><span class="p">:</span> <span class="c1"># 重连设置</span>
+    <span class="nt">delay</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>   <span class="c1"># 首次重连延迟, 单位秒</span>
+    <span class="nt">interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>   <span class="c1"># 重连间隔</span>
+    <span class="nt">max-times</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>  <span class="c1"># 最大重连次数, 0为无限制</span>
+
+  <span class="c1"># 是否使用服务器下发的新地址进行重连</span>
+  <span class="c1"># 注意, 此设置可能导致在海外服务器上连接情况更差</span>
+  <span class="nt">use-sso-address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">heartbeat</span><span class="p">:</span>
+<span class="c1"># 心跳频率, 单位秒</span>
+<span class="c1"># -1 为关闭心跳</span>
+<span class="nt">interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+
+<span class="nt">message</span><span class="p">:</span>
+  <span class="c1"># 上报数据类型</span>
+  <span class="c1"># 可选: string,array</span>
+  <span class="nt">post-format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="c1"># 是否忽略无效的CQ码, 如果为假将原样发送</span>
+  <span class="nt">ignore-invalid-cqcode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="c1"># 是否强制分片发送消息</span>
+  <span class="c1"># 分片发送将会带来更快的速度</span>
+  <span class="c1"># 但是兼容性会有些问题</span>
+  <span class="nt">force-fragment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="c1"># 是否将url分片发送</span>
+  <span class="nt">fix-url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="c1"># 下载图片等请求网络代理</span>
+  <span class="nt">proxy-rewrite</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+  <span class="c1"># 是否上报自身消息</span>
+  <span class="nt">report-self-message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="c1"># 移除服务端的Reply附带的At</span>
+  <span class="nt">remove-reply-at</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="c1"># 为Reply附加更多信息</span>
+  <span class="nt">extra-reply-data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">output</span><span class="p">:</span>
+  <span class="c1"># 日志等级 trace,debug,info,warn,error</span>
+  <span class="nt">log-level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">warn</span>
+  <span class="c1"># 是否启用 DEBUG</span>
+  <span class="nt">debug</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span> <span class="c1"># 开启调试模式</span>
+
+<span class="c1"># 默认中间件锚点</span>
+<span class="nt">default-middlewares</span><span class="p">:</span> <span class="nl">&amp;default</span>
+  <span class="c1"># 访问密钥, 强烈推荐在公网的服务器设置</span>
+  <span class="nt">access-token</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+  <span class="c1"># 事件过滤器文件目录</span>
+  <span class="nt">filter</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+  <span class="c1"># API限速设置</span>
+  <span class="c1"># 该设置为全局生效</span>
+  <span class="c1"># 原 cqhttp 虽然启用了 rate_limit 后缀, 但是基本没插件适配</span>
+  <span class="c1"># 目前该限速设置为令牌桶算法, 请参考:</span>
+  <span class="c1"># https://baike.baidu.com/item/%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95/6597000?fr=aladdin</span>
+  <span class="nt">rate-limit</span><span class="p">:</span>
+    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span> <span class="c1"># 是否启用限速</span>
+    <span class="nt">frequency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>  <span class="c1"># 令牌回复频率, 单位秒</span>
+    <span class="nt">bucket</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>     <span class="c1"># 令牌桶大小</span>
+
+<span class="nt">database</span><span class="p">:</span> <span class="c1"># 数据库相关设置</span>
+  <span class="nt">leveldb</span><span class="p">:</span>
+    <span class="c1"># 是否启用内置leveldb数据库</span>
+    <span class="c1"># 启用将会增加10-20MB的内存占用和一定的磁盘空间</span>
+    <span class="c1"># 关闭将无法使用 撤回 回复 get_msg 等上下文相关功能</span>
+    <span class="nt">enable</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="c1"># 连接服务列表</span>
+<span class="nt">servers</span><span class="p">:</span>
+  <span class="c1"># 添加方式，同一连接方式可添加多个，具体配置说明请查看文档</span>
+  <span class="c1">#- http: # http 通信</span>
+  <span class="c1">#- ws:   # 正向 Websocket</span>
+  <span class="c1">#- ws-reverse: # 反向 Websocket</span>
+  <span class="c1">#- pprof: #性能分析服务器</span>
+  <span class="c1"># Zhamao Framework 所需要的服务器配置</span>
+<span class="hll">  <span class="p p-Indicator">-</span> <span class="nt">ws-reverse</span><span class="p">:</span>
+</span>    <span class="c1"># 是否禁用当前反向WS服务</span>
+    <span class="nt">disabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="c1"># 反向WS Universal 地址</span>
+    <span class="c1"># 注意 设置了此项地址后下面两项将会被忽略</span>
+<span class="hll">    <span class="nt">universal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ws://127.0.0.1:20001/</span>
+</span>    <span class="c1"># 反向WS API 地址</span>
+    <span class="nt">api</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ws://your_websocket_api.server</span>
+    <span class="c1"># 反向WS Event 地址</span>
+    <span class="nt">event</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ws://your_websocket_event.server</span>
+    <span class="c1"># 重连间隔 单位毫秒</span>
+    <span class="nt">reconnect-interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
+    <span class="nt">middlewares</span><span class="p">:</span>
+      <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*default</span> <span class="c1"># 引用默认中间件</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">config.hjson（v1.0.0-beta2或更早版本所用格式）</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="err">//</span> <span class="err">QQ号</span>
+<span class="hll">  <span class="err">ui</span><span class="kc">n</span><span class="p">:</span> <span class="err">你的机器人QQ</span>
+</span>  <span class="err">//</span> <span class="err">QQ密码</span>
+<span class="hll">  <span class="err">password</span><span class="p">:</span> <span class="s2">&quot;你的QQ密码&quot;</span>
+</span>  <span class="err">//</span> <span class="err">是否启用密码加密</span>
+  <span class="err">e</span><span class="kc">n</span><span class="err">cryp</span><span class="kc">t</span><span class="err">_password</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="err">//</span> <span class="err">加密后的密码</span><span class="p">,</span> <span class="err">如未启用密码加密将为空</span><span class="p">,</span> <span class="err">请勿随意修改.</span>
+  <span class="err">password_e</span><span class="kc">n</span><span class="err">cryp</span><span class="kc">te</span><span class="err">d</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="err">//</span> <span class="err">是否启用内置数据库</span>
+  <span class="err">//</span> <span class="err">启用将会增加</span><span class="mi">10-20</span><span class="err">MB的内存占用和一定的磁盘空间</span>
+  <span class="err">//</span> <span class="err">关闭将无法使用</span> <span class="err">撤回</span> <span class="err">回复</span> <span class="err">ge</span><span class="kc">t</span><span class="err">_msg</span> <span class="err">等上下文相关功能</span>
+  <span class="err">e</span><span class="kc">na</span><span class="err">ble_db</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="err">//</span> <span class="err">访问密钥</span><span class="p">,</span> <span class="err">强烈推荐在公网的服务器设置</span>
+  <span class="err">access_</span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="err">//</span> <span class="err">重连设置</span>
+  <span class="err">relogi</span><span class="kc">n</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">是否启用自动重连</span>
+    <span class="err">//</span> <span class="err">如不启用掉线后将不会自动重连</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="err">//</span> <span class="err">重连延迟</span><span class="p">,</span> <span class="err">单位秒</span>
+    <span class="err">relogi</span><span class="kc">n</span><span class="err">_delay</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="err">//</span> <span class="err">最大重连次数</span><span class="p">,</span> <span class="mi">0</span><span class="err">为无限制</span>
+    <span class="err">max_relogi</span><span class="kc">n</span><span class="err">_</span><span class="kc">t</span><span class="err">imes</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+  <span class="err">//</span> <span class="err">API限速设置</span>
+  <span class="err">//</span> <span class="err">该设置为全局生效</span>
+  <span class="err">//</span> <span class="err">原</span> <span class="err">cqh</span><span class="kc">tt</span><span class="err">p</span> <span class="err">虽然启用了</span> <span class="err">ra</span><span class="kc">te</span><span class="err">_limi</span><span class="kc">t</span> <span class="err">后缀</span><span class="p">,</span> <span class="err">但是基本没插件适配</span>
+  <span class="err">//</span> <span class="err">目前该限速设置为令牌桶算法</span><span class="p">,</span> <span class="err">请参考</span><span class="p">:</span> 
+  <span class="err">//h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//baike.baidu.com/i</span><span class="kc">te</span><span class="err">m/%E</span><span class="mi">4</span><span class="err">%BB%A</span><span class="mi">4</span><span class="err">%E</span><span class="mi">7</span><span class="err">%</span><span class="mi">89</span><span class="err">%</span><span class="mi">8</span><span class="err">C%E</span><span class="mi">6</span><span class="err">%A</span><span class="mi">1</span><span class="err">%B</span><span class="mi">6</span><span class="err">%E</span><span class="mi">7</span><span class="err">%AE%</span><span class="mi">97</span><span class="err">%E</span><span class="mi">6</span><span class="err">%B</span><span class="mi">3</span><span class="err">%</span><span class="mi">95</span><span class="err">/</span><span class="mi">6597000</span><span class="err">?</span><span class="kc">fr</span><span class="err">=aladdi</span><span class="kc">n</span>
+  <span class="err">_ra</span><span class="kc">te</span><span class="err">_limi</span><span class="kc">t</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">是否启用限速</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="err">//</span> <span class="err">令牌回复频率</span><span class="p">,</span> <span class="err">单位秒</span>
+    <span class="kc">fre</span><span class="err">que</span><span class="kc">n</span><span class="err">cy</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="err">//</span> <span class="err">令牌桶大小</span>
+    <span class="err">bucke</span><span class="kc">t</span><span class="err">_size</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+  <span class="err">//</span> <span class="err">是否忽略无效的CQ码</span>
+  <span class="err">//</span> <span class="err">如果为假将原样发送</span>
+  <span class="err">ig</span><span class="kc">n</span><span class="err">ore_i</span><span class="kc">n</span><span class="err">valid_cqcode</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="err">//</span> <span class="err">是否强制分片发送消息</span>
+  <span class="err">//</span> <span class="err">分片发送将会带来更快的速度</span>
+  <span class="err">//</span> <span class="err">但是兼容性会有些问题</span>
+  <span class="kc">f</span><span class="err">orce_</span><span class="kc">fra</span><span class="err">gme</span><span class="kc">nte</span><span class="err">d</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="err">//</span> <span class="err">心跳频率</span><span class="p">,</span> <span class="err">单位秒</span>
+  <span class="err">//</span> <span class="mi">-1</span> <span class="err">为关闭心跳</span>
+  <span class="err">hear</span><span class="kc">t</span><span class="err">bea</span><span class="kc">t</span><span class="err">_i</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="err">//</span> <span class="err">HTTP设置</span>
+  <span class="err">h</span><span class="kc">tt</span><span class="err">p_co</span><span class="kc">nf</span><span class="err">ig</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">是否启用正向HTTP服务器</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="err">//</span> <span class="err">服务端监听地址</span>
+    <span class="err">hos</span><span class="kc">t</span><span class="p">:</span> <span class="mf">0.0.0.0</span>
+    <span class="err">//</span> <span class="err">服务端监听端口</span>
+    <span class="err">por</span><span class="kc">t</span><span class="p">:</span> <span class="mi">5700</span>
+    <span class="err">//</span> <span class="err">反向HTTP超时时间</span><span class="p">,</span> <span class="err">单位秒</span>
+    <span class="err">//</span> <span class="err">最小值为</span><span class="mi">5</span><span class="err">，小于</span><span class="mi">5</span><span class="err">将会忽略本项设置</span>
+    <span class="kc">t</span><span class="err">imeou</span><span class="kc">t</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="err">//</span> <span class="err">反向HTTP</span> <span class="err">POST地址列表</span>
+    <span class="err">//</span> <span class="err">格式</span><span class="p">:</span> 
+    <span class="err">//</span> <span class="p">{</span>
+    <span class="err">//</span>    <span class="err">地址</span><span class="p">:</span> <span class="err">secre</span><span class="kc">t</span>
+    <span class="err">//</span> <span class="p">}</span>
+    <span class="err">pos</span><span class="kc">t</span><span class="err">_urls</span><span class="p">:</span> <span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="err">//</span> <span class="err">正向WS设置</span>
+  <span class="err">ws_co</span><span class="kc">nf</span><span class="err">ig</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">是否启用正向WS服务器</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="err">//</span> <span class="err">正向WS服务器监听地址</span>
+    <span class="err">hos</span><span class="kc">t</span><span class="p">:</span> <span class="mf">0.0.0.0</span>
+    <span class="err">//</span> <span class="err">正向WS服务器监听端口</span>
+    <span class="err">por</span><span class="kc">t</span><span class="p">:</span> <span class="mi">6700</span>
+  <span class="p">}</span>
+  <span class="err">//</span> <span class="err">反向WS设置</span>
+  <span class="err">ws_reverse_servers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="err">//</span> <span class="err">可以添加多个反向WS推送</span>
+    <span class="p">{</span>
+        <span class="err">//</span> <span class="err">是否启用该推送</span>
+<span class="hll">        <span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="p">:</span> <span class="kc">true</span>
+</span>        <span class="err">//</span> <span class="err">反向WS</span> <span class="err">U</span><span class="kc">n</span><span class="err">iversal</span> <span class="err">地址</span>
+        <span class="err">//</span> <span class="err">注意</span> <span class="err">设置了此项地址后下面两项将会被忽略</span>
+<span class="hll">        <span class="err">reverse_url</span><span class="p">:</span> <span class="err">ws</span><span class="p">:</span><span class="err">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">20001</span><span class="err">/</span>
+</span>        <span class="err">//</span> <span class="err">反向WS</span> <span class="err">API</span> <span class="err">地址</span>
+        <span class="err">reverse_api_url</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="err">//</span> <span class="err">反向WS</span> <span class="err">Eve</span><span class="kc">nt</span> <span class="err">地址</span>
+        <span class="err">reverse_eve</span><span class="kc">nt</span><span class="err">_url</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="err">//</span> <span class="err">重连间隔</span> <span class="err">单位毫秒</span>
+        <span class="err">reverse_reco</span><span class="kc">nne</span><span class="err">c</span><span class="kc">t</span><span class="err">_i</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span> <span class="mi">3000</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+  <span class="err">//</span> <span class="err">上报数据类型</span>
+  <span class="err">//</span> <span class="err">可选</span><span class="p">:</span> <span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span> <span class="err">array</span>
+  <span class="err">pos</span><span class="kc">t</span><span class="err">_message_</span><span class="kc">f</span><span class="err">orma</span><span class="kc">t</span><span class="p">:</span> <span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+  <span class="err">//</span> <span class="err">是否使用服务器下发的新地址进行重连</span>
+  <span class="err">//</span> <span class="err">注意</span><span class="p">,</span> <span class="err">此设置可能导致在海外服务器上连接情况更差</span>
+  <span class="err">use_sso_address</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="err">//</span> <span class="err">是否启用</span> <span class="err">DEBUG</span>
+  <span class="err">debug</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="err">//</span> <span class="err">日志等级</span>
+  <span class="err">//</span> <span class="err">WebUi</span> <span class="err">设置</span>
+  <span class="err">web_ui</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">是否启用</span> <span class="err">WebUi</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="err">//</span> <span class="err">监听地址</span>
+    <span class="err">hos</span><span class="kc">t</span><span class="p">:</span> <span class="mf">127.0.0.1</span>
+    <span class="err">//</span> <span class="err">监听端口</span>
+    <span class="err">web_ui_por</span><span class="kc">t</span><span class="p">:</span> <span class="mi">9999</span>
+    <span class="err">//</span> <span class="err">是否接收来自web的输入</span>
+    <span class="err">web_i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">config.json（旧格式）</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="hll">  <span class="nt">&quot;uin&quot;</span><span class="p">:</span> <span class="err">你的QQ号</span><span class="p">,</span>
+</span><span class="hll">  <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;你的密码&quot;</span><span class="p">,</span>
+</span>  <span class="nt">&quot;encrypt_password&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;password_encrypted&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;enable_db&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;relogin&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;relogin_delay&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;max_relogin_times&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;ignore_invalid_cqcode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;force_fragmented&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;heartbeat_interval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;http_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5700</span><span class="p">,</span>
+    <span class="nt">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;post_urls&quot;</span><span class="p">:</span> <span class="p">{}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;ws_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">6700</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;ws_reverse_servers&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+<span class="hll">      <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class="hll">      <span class="nt">&quot;reverse_url&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://127.0.0.1:20001/&quot;</span><span class="p">,</span>
+</span>      <span class="nt">&quot;reverse_api_url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reverse_event_url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reverse_reconnect_interval&quot;</span><span class="p">:</span> <span class="mi">3000</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;post_message_format&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;debug&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;log_level&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>其中 ws://127.0.0.1:20001/ 中的 127.0.0.1 和 20001 应分别对应炸毛框架配置的 HOST 和 PORT</p>
+<h2 id="_3">第一次对话</h2>
+<p>一旦新的配置文件正确生效之后，所在的控制台（如果正在运行的话）应该会输出类似下面的内容：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">26</span><span class="o">:</span><span class="mh">34</span><span class="p">]</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[#</span><span class="mh">2</span><span class="p">]</span> <span class="err">机器人</span> <span class="err">你的</span><span class="n">QQ号</span> <span class="err">已连接！</span>
+</code></pre></div>
+</td></tr></table>
+<p>表明机器人已成功连接到炸毛框架了！</p>
+<p>这时，如果你是根据安装教程走下来并且未编写任何模块，炸毛自带一个示例模块，里面含有命令：<code>你好</code>，<code>随机数</code>。如果你对机器人回复：<code>你好</code>，它会回复你 <code>你好啊，我是由炸毛框架构建的机器人！</code>。这一历史性的对话标志着你已经成功地运行了炸毛框架，开始了编写更强大的 QQ 机器人的创意之旅！</p>
+<h2 id="_4">编写一个命令</h2>
+<p>让我们转到框架的模块源代码部分，目录是 <code>src/Module/Example</code>，文件是 <code>Hello.php</code>。我们插入一段这样的代码：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;echo&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function repeat() {</span>
+<span class="x">  $repeat = ctx()-&gt;getFullArg(&quot;请输入你要回复的内容&quot;);</span>
+<span class="x">  ctx()-&gt;reply($repeat);</span>
+<span class="x">  //return $repeat; // 这样的效果等同于 ctx()-&gt;reply()</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>这样，一个简易的复读机就做好了！回到 QQ 机器人聊天，向机器人发送 <code>echo 你好啊</code>，它会回复你 <code>你好啊</code>。</p>
+<p><chat-box>
+) echo 你好啊
+( 你好啊
+) echo
+( 请输入你要回复的内容
+) 哦豁
+( 哦豁
+</chat-box></p>
+<blockquote>
+<p>如果你只回复 <code>echo</code> 的话，它会先和你进入一个会话状态，并问你 <code>请输入你要回复的内容</code>，这时你再次说一些内容例如 <code>哦豁</code>，会回复你 <code>哦豁</code>。效果和直接输入 <code>echo 哦豁</code> 是一致的，这是炸毛框架内的一个封装好的命令参数对话询问功能。有关参数询问功能，请看后面的进阶模块。</p>
+</blockquote>
+<h2 id="api">使用机器人 API 和事件</h2>
+<p>如果你想不只是回复消息，还要做其他复杂的动作（Action），使用 OneBot Action（又名 OneBot API）进行发送即可，见 <a href="/component/bot/robot-api">机器人 API</a>。</p>
+<p>如果想处理其他类型的事件，比如 QQ 群通知事件等，见 <a href="/event/robot-annotations/">机器人注解事件</a>。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 安装框架" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              安装框架
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../quickstart-http/" class="md-footer__link md-footer__link--next" aria-label="下一页: 快速上手（HTTP篇）" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              快速上手（HTTP篇）
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2021 CrazyBot Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx-switch"> <button data-md-color-scheme="default"><code>默认模式</code></button> <button data-md-color-scheme="slate"><code>暗黑模式</code></button> </span>
+<script> var buttons = document.querySelectorAll("button[data-md-color-scheme]"); buttons.forEach(function(button) { button.addEventListener("click", function() { var attr = this.getAttribute("data-md-color-scheme"); setCookie("_theme", attr); document.body.setAttribute("data-md-color-scheme", attr); var name = document.querySelector("#__code_0 code span:nth-child(7)"); name.textContent = attr; }) }) </script><br><a href="http://beian.miit.gov.cn">沪ICP备2021010446号-1</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

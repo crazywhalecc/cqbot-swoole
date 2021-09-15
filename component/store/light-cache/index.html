@@ -1,0 +1,2262 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>LightCache 轻量缓存 - 炸毛框架文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lightcache" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="炸毛框架文档" class="md-header__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../../assets/logos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            炸毛框架文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LightCache 轻量缓存
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../event/" class="md-tabs__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        框架组件
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../advanced/" class="md-tabs__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/FAQ/" class="md-tabs__link">
+        FAQ
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../update/v2/" class="md-tabs__link">
+        更新日志
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs-v1.zhamao.xin/" class="md-tabs__link">
+      <u>炸毛框架 v1</u>
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="炸毛框架文档" class="md-nav__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../../assets/logos.png" alt="logo">
+
+    </a>
+    炸毛框架文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/installation/" class="md-nav__link">
+        安装框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/quickstart-robot/" class="md-nav__link">
+        快速上手（机器人篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/quickstart-http/" class="md-nav__link">
+        快速上手（HTTP篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/onebot-choose/" class="md-nav__link">
+        选择聊天机器人实例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/basic-config/" class="md-nav__link">
+        基本配置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/write-module/" class="md-nav__link">
+        编写模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/register-event/" class="md-nav__link">
+        注册事件响应
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/errcode/" class="md-nav__link">
+        错误码对照表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        事件和注解
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="事件和注解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          事件和注解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/" class="md-nav__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/robot-annotations/" class="md-nav__link">
+        机器人注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/route-annotations/" class="md-nav__link">
+        HTTP 路由注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/framework-annotations/" class="md-nav__link">
+        框架核心注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/middleware/" class="md-nav__link">
+        中间件注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/custom-annotations/" class="md-nav__link">
+        自定义注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/event-dispatcher/" class="md-nav__link">
+        事件分发器
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        框架组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="框架组件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          框架组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        框架组件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/" class="md-nav__link">
+        上下文
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        聊天机器人组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="聊天机器人组件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          聊天机器人组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bot/robot-api/" class="md-nav__link">
+        机器人 API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bot/cqcode/" class="md-nav__link">
+        CQ 码（多媒体消息）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bot/message-util/" class="md-nav__link">
+        机器人消息处理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bot/access-token/" class="md-nav__link">
+        Token 验证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bot/turing-api/" class="md-nav__link">
+        图灵机器人 API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        存储
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="存储" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          存储
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          LightCache 轻量缓存
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        LightCache 轻量缓存
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zmbuf" class="md-nav__link">
+    与 ZMBuf 的不同
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    使用
+  </a>
+  
+    <nav class="md-nav" aria-label="使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置和初始化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheset" class="md-nav__link">
+    LightCache::set()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheupdate" class="md-nav__link">
+    LightCache::update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheget" class="md-nav__link">
+    LightCache::get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetexpire" class="md-nav__link">
+    LightCache::getExpire()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetexpirets" class="md-nav__link">
+    LightCache::getExpireTS()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetmemoryusage" class="md-nav__link">
+    LightCache::getMemoryUsage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheisset" class="md-nav__link">
+    LightCache::isset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheunset" class="md-nav__link">
+    LightCache::unset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetall" class="md-nav__link">
+    LightCache::getAll()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheaddpersistence" class="md-nav__link">
+    LightCache::addPersistence()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheremovepersistence" class="md-nav__link">
+    LightCache::removePersistence()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    持久化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数据加锁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    如何临时缓存大变量
+  </a>
+  
+    <nav class="md-nav" aria-label="如何临时缓存大变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workercache" class="md-nav__link">
+    WorkerCache 跨进程大缓存
+  </a>
+  
+    <nav class="md-nav" aria-label="WorkerCache 跨进程大缓存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheget" class="md-nav__link">
+    WorkerCache::get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheset" class="md-nav__link">
+    WorkerCache::set()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheunset" class="md-nav__link">
+    WorkerCache::unset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheadd" class="md-nav__link">
+    WorkerCache::add()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercachesub" class="md-nav__link">
+    WorkerCache::sub()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        MySQL 查询器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql-db/" class="md-nav__link">
+        MySQL 查询器（废弃）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        Redis 数据库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atomics/" class="md-nav__link">
+        ZMAtomic 原子计数器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spin-lock/" class="md-nav__link">
+        SpinLock 自旋锁
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provider/" class="md-nav__link">
+        文件管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        HTTP 服务器工具类
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="HTTP 服务器工具类" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP 服务器工具类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zmrequest/" class="md-nav__link">
+        HTTP 和 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../route-manager/" class="md-nav__link">
+        HTTP 路由管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        模块/插件管理
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="模块/插件管理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          模块/插件管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module/module-pack/" class="md-nav__link">
+        模块打包
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module/module-unpack/" class="md-nav__link">
+        模块解包
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coroutine-pool/" class="md-nav__link">
+        协程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleton-trait/" class="md-nav__link">
+        单例类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zmutil/" class="md-nav__link">
+        ZMUtil 杂项
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../global-functions/" class="md-nav__link">
+        全局方法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/" class="md-nav__link">
+        Console 终端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-worker/" class="md-nav__link">
+        TaskWorker 管理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remote-terminal/" class="md-nav__link">
+        Terminal 终端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        进阶开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="进阶开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          进阶开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/" class="md-nav__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/framework-structure/" class="md-nav__link">
+        框架剖析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/custom-start/" class="md-nav__link">
+        框架启动模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/manually-install/" class="md-nav__link">
+        手动安装环境
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/to-v2/" class="md-nav__link">
+        从 v1 升级
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/inside-class/" class="md-nav__link">
+        内部类文件手册
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/connect-ws-client/" class="md-nav__link">
+        接入 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/multi-process/" class="md-nav__link">
+        框架多进程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/task-worker/" class="md-nav__link">
+        TaskWorker 提高并发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      <label class="md-nav__link" for="__nav_4_10">
+        开发实战教程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发实战教程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          开发实战教程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/example/admin/" class="md-nav__link">
+        编写管理员才能触发的功能
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/usual-question/" class="md-nav__link">
+        框架常见问题（持续更新）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/address-already-in-use/" class="md-nav__link">
+        启动时报错 Address already in use
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/display-deadlock/" class="md-nav__link">
+        出现 deadlock 字样
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/light-cache-wrong/" class="md-nav__link">
+        使用 LightCache 关闭时无法正常保存持久化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/wait-message-cqbefore/" class="md-nav__link">
+        CQBefore 过滤不了 waitMessage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        更新日志
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="更新日志" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          更新日志
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/v2/" class="md-nav__link">
+        更新日志（v2）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/v1/" class="md-nav__link">
+        更新日志（v1）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/build-update/" class="md-nav__link">
+        更新日志（build update）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/config/" class="md-nav__link">
+        配置文件更新日志
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs-v1.zhamao.xin/" class="md-nav__link">
+        <u>炸毛框架 v1</u>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zmbuf" class="md-nav__link">
+    与 ZMBuf 的不同
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    使用
+  </a>
+  
+    <nav class="md-nav" aria-label="使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置和初始化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheset" class="md-nav__link">
+    LightCache::set()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheupdate" class="md-nav__link">
+    LightCache::update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheget" class="md-nav__link">
+    LightCache::get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetexpire" class="md-nav__link">
+    LightCache::getExpire()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetexpirets" class="md-nav__link">
+    LightCache::getExpireTS()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetmemoryusage" class="md-nav__link">
+    LightCache::getMemoryUsage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheisset" class="md-nav__link">
+    LightCache::isset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheunset" class="md-nav__link">
+    LightCache::unset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcachegetall" class="md-nav__link">
+    LightCache::getAll()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheaddpersistence" class="md-nav__link">
+    LightCache::addPersistence()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightcacheremovepersistence" class="md-nav__link">
+    LightCache::removePersistence()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    持久化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数据加锁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    如何临时缓存大变量
+  </a>
+  
+    <nav class="md-nav" aria-label="如何临时缓存大变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workercache" class="md-nav__link">
+    WorkerCache 跨进程大缓存
+  </a>
+  
+    <nav class="md-nav" aria-label="WorkerCache 跨进程大缓存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheget" class="md-nav__link">
+    WorkerCache::get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheset" class="md-nav__link">
+    WorkerCache::set()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheunset" class="md-nav__link">
+    WorkerCache::unset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercacheadd" class="md-nav__link">
+    WorkerCache::add()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercachesub" class="md-nav__link">
+    WorkerCache::sub()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/zhamao-robot/zhamao-framework/blob/master/docs/component/store/light-cache.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="lightcache">LightCache 轻量缓存</h1>
+<p>在炸毛框架 1.x 时代，框架里有非常方便使用的 ZMBuf 缓存，但是由于 2.x 版本框架加入了多进程模式，所以不能再以传统的存到全局变量的方式来构建和管理缓存了，LightCache 就是替代方案。LightCache 依旧是 key-value 键值对形式的存储，支持多种类型的变量。</p>
+<p>定义：<code>ZM\Store\LightCache</code>。</p>
+<h2 id="zmbuf">与 ZMBuf 的不同</h2>
+<p>从存储内容角度，LightCache 存入的是 Swoole 初始化的共享内存，基于 Swoole/Table 编写。优势在于多进程下的性能极佳，而且没有数据同步问题；劣势在于它需要在启动框架前就声明总大小，不能根据存储数据的大小来划定，需提前指定最大能存储的容量。而 ZMBuf 基于直接把变量存到静态成员中 <code>public static $data</code> 类似这样，且 1.x 框架基于单进程单线程，无任何数据同步的问题。</p>
+<p>总之来说，LightCache 是让用户在涉及多进程编程时，一个折中的解决方案，提出和解决了很多多进程开发时存储数据遇到的问题：数据同步、进程间通信效率、数据是否需要上锁等。</p>
+<ul>
+<li>数据同步：多进程下因为是固定的内存大小区域，所以每个进程读取和写入都是只有一份数据的，不存在数据不同步的问题。</li>
+<li>进程间通信：因为多个进程共享一片区域的内存，所以不需要进程间通信，无协程切换。</li>
+<li>镀锡是否需要上锁：看情况。一般情况下 Swoole/Table 模块自带一个行锁，只有两个进程在两个 CPU 上同时读取一行数据时才会发生抢锁，作为框架的使用者，如果只写或只读，是无需手动上任何锁的。只有在先 <code>get()</code> 再 <code>set()</code> 这样的情况才需要上自旋锁。后面的段会详细讲述。</li>
+</ul>
+<p>使用体验上，基本和 ZMBuf 无差，如果没有用过 1.x 的版本，可无视此段话。</p>
+<h2 id="_1">使用</h2>
+<h3 id="_2">配置和初始化</h3>
+<p>配置文件还是在 <code>config/global.php</code> 文件里，字段是 <code>light_cache</code>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/** 轻量字符串缓存，默认开启 */</span>
+<span class="x">$config[&#39;light_cache&#39;] = [</span>
+<span class="x">    &#39;size&#39; =&gt; 512,                     //最多允许储存的条数（需要2的倍数）</span>
+<span class="x">    &#39;max_strlen&#39; =&gt; 32768,               //单行字符串最大长度（需要2的倍数）</span>
+<span class="x">    &#39;hash_conflict_proportion&#39; =&gt; 0.6,   //Hash冲突率（越大越好，但是需要的内存更多）</span>
+<span class="x">    &#39;persistence_path&#39; =&gt; $config[&#39;zm_data&#39;].&#39;_cache.json&#39;,</span>
+<span class="x">    &#39;auto_save_interval&#39; =&gt; 900</span>
+<span class="x">];</span>
+</code></pre></div>
+</td></tr></table>
+<p>其中 <code>$size</code> 是最多保存的键值对数目，填写非 2 的倍数时底层会自动修正为 2 的倍数值。</p>
+<p><code>$max_strlen</code> 为单条值最长保存的长度。因为 Swoole/Table 只能存数字、字符串，所以在存取数组等变量时会先将其序列化为字符串形式保存，get 时自动反序列化回来。在存数组等非字符串变量时，请先自行计算你要存取的内容序列化后的最大长度。如果长度超出最大长度，则无法保存，<code>set()</code> 将返回 false。</p>
+<p><code>hash_conflict_proportion</code>：Table 模块底层使用 hash 表，会存在 hash 冲突，调大 Hash 冲突率会提升 <code>size</code> 指定条目数的准确性，但也将增加物理内存的使用。这里单位是百分比，<code>0.6</code> 为 <code>60%</code>。</p>
+<p><code>persistence_path</code> 是持久化保存变量的文件保存位置，默认在 <code>zm_data/_cache.json</code> 文件。</p>
+<p><code>auto_save_interval</code> 是持久化保存变量的自动保存时间，单位秒。</p>
+<h3 id="lightcacheset">LightCache::set()</h3>
+<p>设置内容。</p>
+<p>定义：<code>LightCache::set($key, $value, $expire = -1)</code></p>
+<p>返回值：<code>bool</code>。当 value 超出了最大长度或内存不足时，返回 false，其余 true。</p>
+<p>参数：</p>
+<p><code>$key</code> 的长度不能超过 64 字节，且不能存入二进制内容。</p>
+<p><code>$value</code> 可存入 <code>bool</code>、<code>string</code>、<code>int</code>、<code>array</code> 等可被 <code>json_encode()</code> 的变量，闭包函数和对象不可存入。</p>
+<p><code>$expire</code> 是 <code>int</code>，超时时间（秒）。如果设定了大于 0 的值，则表明是在 <code>$expire</code> 秒后自动删除（框架中途停止不受影响）。如果为 -1 则什么都不做。框架停止后自动被清除。</p>
+<p><strong>注意：如果前面使用了 set() ，后面再次使用 set() 会重置 expire 过期时间为 -1（-1 是框架运行时不过期，关闭框架删除的状态），如果只需要更新值，请使用 update()。</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">// use ZM\Store\LightCache;</span>
+<span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;store&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function store() {</span>
+<span class="x">    LightCache::set(&quot;key1&quot;, [&quot;value1&quot; =&gt; &quot;strOrInt&quot;, &quot;value2&quot; =&gt; 123]);</span>
+<span class="x">    return &quot;OK!&quot;;</span>
+<span class="x">}</span>
+<span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;storeAfterRemove&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function storeAfterRemove() {</span>
+<span class="x">    LightCache::set(&quot;store1&quot;, &quot;remove1&quot;, 30);</span>
+<span class="x">    ctx()-&gt;reply(LightCache::get(&quot;store1&quot;) !== null ? &quot;内容存在！&quot; : &quot;内容不存在！&quot;);</span>
+<span class="x">    zm_sleep(30);</span>
+<span class="x">    ctx()-&gt;reply(LightCache::get(&quot;store1&quot;) !== null ? &quot;内容存在！&quot; : &quot;内容不存在！&quot;);</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><chat-box>
+) store
+( OK！
+) storeAfterRemove
+( 内容存在！
+^ 等待 30 秒
+( 内容不存在！
+</chat-box></p>
+<h3 id="lightcacheupdate">LightCache::update()</h3>
+<p>更新值而不更新状态。如果键值对不存在，则返回 false。</p>
+<p>定义：<code>LightCache::update(string $key, $value)</code></p>
+<p>参数同 <code>set()</code>，可参考。</p>
+<h3 id="lightcacheget">LightCache::get()</h3>
+<p>获取内容。</p>
+<p>返回值：<code>mixed|null</code>。当无内容或过期时返回 null，剩余情况返回原数据。</p>
+<h3 id="lightcachegetexpire">LightCache::getExpire()</h3>
+<p>获取存储项剩余过期时间（秒）。</p>
+<p>定义：<code>LightCache::getExpire(string $key)</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$s = LightCache::set(&quot;test&quot;, &quot;hello&quot;, 20);</span>
+<span class="x">zm_sleep(10);</span>
+<span class="x">dump(LightCache::getExpire(&quot;test&quot;)); // 返回 10</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="lightcachegetexpirets">LightCache::getExpireTS()</h3>
+<p>获取存储项要过期的时间戳。（2.4.3 起可用）</p>
+<p>定义：<code>LightCache::getExpireTS(string $key)</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$s = LightCache::set(&quot;test&quot;, &quot;hello&quot;, 20); //假设这条代码执行时时间戳是 1616838482</span>
+<span class="x">zm_sleep(10);</span>
+<span class="x">dump(LightCache::getExpire(&quot;test&quot;)); // 返回 1616838502</span>
+<span class="x">zm_sleep(10);</span>
+<span class="x">dump(LightCache::getExpire(&quot;test&quot;)); // 返回 null</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="lightcachegetmemoryusage">LightCache::getMemoryUsage()</h3>
+<p>获取轻量缓存使用的总空间大小（字节）</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">LightCache::getMemoryUsage();</span>
+</code></pre></div>
+</td></tr></table>
+<p>轻量缓存的内存手工计算方式：(Table 结构体长度<code>+</code>KEY 长度 64 字节 + <code>$size</code>) * (1 + <code>$conflict_proportion</code>) * 列尺寸。</p>
+<p>Table 结构体长度根据你所设定的 <code>max_strlen</code> 会变化。</p>
+<blockquote>
+<p>框架默认配置下的轻量缓存启动后大约占用内存 25MB 左右。</p>
+</blockquote>
+<h3 id="lightcacheisset">LightCache::isset()</h3>
+<p>判断某项是否存在。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">LightCache::set(&quot;foo&quot;, &quot;bar&quot;);</span>
+<span class="x">dump(LightCache::isset(&quot;foo&quot;)); // true</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="lightcacheunset">LightCache::unset()</h3>
+<p>删除某项。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">LightCache::set(&quot;foo&quot;, &quot;bar&quot;);</span>
+<span class="x">LightCache::unset(&quot;foo&quot;);</span>
+<span class="x">dump(LightCache::isset(&quot;foo&quot;)); // false</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="lightcachegetall">LightCache::getAll()</h3>
+<p>获取所有项。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">LightCache::set(&quot;k1&quot;, [&quot;I&quot;, &quot;am&quot;, &quot;array&quot;]);</span>
+<span class="x">LightCache::set(&quot;k2&quot;, &quot;v2&quot;);</span>
+<span class="x">LightCache::set(&quot;k3&quot;, 20001);</span>
+<span class="x">dump(LightCache::getAll());</span>
+<span class="x">/*</span>
+<span class="x">{</span>
+<span class="x">&quot;k1&quot;: [&quot;I&quot;, &quot;am&quot;, &quot;array&quot;],</span>
+<span class="x">&quot;k2&quot;: &quot;v2&quot;,</span>
+<span class="x">&quot;k3&quot;: 20001</span>
+<span class="x">}</span>
+<span class="x">*/</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="lightcacheaddpersistence">LightCache::addPersistence()</h3>
+<p>添加持久化存储的键。</p>
+<p>用法：<code>LightCache::addPersistence($key)</code>。</p>
+<p>注：只需调用一次即可，无需多次重复调用，也不需要设置 expire 为 -2 了。（2.4.2 起可用此方法）。</p>
+<p>详见下方 <strong>持久化</strong>。</p>
+<h3 id="lightcacheremovepersistence">LightCache::removePersistence()</h3>
+<p>删除持久化的键。</p>
+<p>用法：<code>LightCache::removePersistence($key)</code>。</p>
+<p>注：只需调用一次即可，无需多次重复调用，也不需要设置 expire 为非 -2 了。（2.4.2 起可用此方法）。</p>
+<h3 id="_3">持久化</h3>
+<p>使用 <code>LightCache::addPersistence($key)</code> 添加对应需要持久化的键名即可。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @OnStart()</span>
+<span class="x"> */</span>
+<span class="x">public function onStart() {</span>
+<span class="x">    LightCache::addPersistence(&quot;msg_time&quot;);</span>
+<span class="x">}</span>
+<span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;getStore&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function getStore() {</span>
+<span class="x">    return &quot;存储时间：&quot;.date(&quot;Y-m-d H:i:s&quot;, LightCache::get(&quot;msg_time&quot;));</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><chat-box>
+^ 我在 2021-01-05 15:21:00 发送这条消息
+) getStore
+( 2021-01-05 15:20:00
+^ 这时我用 Ctrl+C 停止框架，过一会儿再启动
+) getStore
+( 存储时间：2021-01-05 15:20:00
+</chat-box></p>
+<h3 id="_4">数据加锁</h3>
+<p>在特定情况下，使用 LightCache 必须配合锁使用，否则会出现数据错乱。我们来看下面的例子：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @RequestMapping(&quot;/test&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function test() {</span>
+<span class="x">    $s = LightCache::get(&quot;web_count&quot;);</span>
+<span class="x">    if($s === null) $s = 1;</span>
+<span class="x">    else $s += 1;</span>
+<span class="x">    LightCache::set(&quot;web_count&quot;, $s);</span>
+<span class="x">    return &quot;&lt;h1&gt;It works!&lt;/h1&gt;&quot;;</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>我们使用压测工具，例如 <code>ab</code>，对此路由接口开很多很多线程进行测试，假设我们设置请求总数为 200000 次，框架的工作进程数为 8（我用的是 2020 年末的 i5 MacBook Pro 13 inch）。</p>
+<blockquote>
+<p>懒得再测了，下面就口述过程吧。</p>
+</blockquote>
+<p>在运行完测试后，通过 <code>LightCache::get("web_count")</code>，获取到的数你会发现不是 200000。怎么回事呢？请自行翻阅多进程开发相关的书籍哦！（或者简单理解为，有一些情况下，进程 1 执行到了 <code>if-else</code> 语句，另一个进程也执行到了这里，两次在代码层面加的数是相同的，则虽然请求了两次，但是后执行 set 的那个进程又覆盖了前一个进程执行的值，导致最终结果加了 1 而不是 2）</p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>同样的场景，使用 ZMAtomic 就不需要使用锁了。Atomic 是一句话：<code>add(1)</code> 立即加值的。而 LightCache 需要加锁的情况一般都是 <code>get-&gt;改值-&gt;set</code> 这样的代码。</p>
+</div>
+<p>解决这一问题，就需要用到锁。这种情况下，我们首先考虑的是自旋锁，框架也因此内置了一个方便使用的自旋锁组件。详见下一章：自旋锁。</p>
+<h2 id="_5">如何临时缓存大变量</h2>
+<p>由于 LightCache 需要提前声明最大大小，所以在某些情况下，比如第三方 API 接口结果临时缓存，可能不太适合使用，这时对于 2.x 版本的多进程炸毛框架是一个新的问题。</p>
+<p>解决方案有三种：</p>
+<ul>
+<li>将 <code>global.php</code> 中的 <code>swoole.worker_num</code> 调整为 <code>1</code> 即可，所有除所有主 handler 事件的用户类外其他类均可使用如 <code>Hello::$store</code> 类似的静态变量全局存取</li>
+<li>使用 WorkerCache（需要 2.2.0 以上版本）</li>
+<li>使用 Redis（需要安装 <code>redis</code> 扩展）</li>
+</ul>
+<p>以上，WorkerCache 是为了弥补 LightCache 的不足而诞生的，以下就是 WorkerCache 的具体内容。</p>
+<h3 id="workercache">WorkerCache 跨进程大缓存</h3>
+<p>WorkerCache 和 LightCache 几乎完全不同，WorkerCache 存储的方式说白了就是 PHP 的静态变量，不过框架支持使用封装好的进程间通信进行跨进程读取。但由于需要设置一个存储变量的进程，所以配置文件必须先指定要将数据存到哪个 Worker/TaskWorker 进程中。关于框架内多进程的说明，请见 <a href="/advanced/multi-process/">进阶 - 多进程 Hack</a>。</p>
+<p>定义：<code>ZM\Store\WorkerCache</code>。</p>
+<h4 id="_6">配置</h4>
+<p>见 <a href="/guide/basic-config/">基本配置</a>。</p>
+<h4 id="workercacheget">WorkerCache::get()</h4>
+<p>定义：<code>get($key)</code>。</p>
+<p><code>$key</code> 为指定要获取的键值对的值，如果不存在则返回 null。</p>
+<h4 id="workercacheset">WorkerCache::set()</h4>
+<p>定义：<code>set($key, $value, $async = false)</code>。</p>
+<p>设置变量，你懂的。</p>
+<p>注意，<code>$value</code> 可以是被无损 <code>json_encode</code> 和 <code>json_decode</code> 的变量，闭包（Closure）、资源（resource）等类型不支持存储。</p>
+<p><code>$async</code> 默认为 false，当为 true 时候，不会返回是否成功设置与否，否则会协程等待是否目标进程存储成功。</p>
+<h4 id="workercacheunset">WorkerCache::unset()</h4>
+<p>定义：<code>unset($key, $async = false)</code> </p>
+<p>删除键对应的值。<code>$async</code> 的意义同上。</p>
+<h4 id="workercacheadd">WorkerCache::add()</h4>
+<p>定义：<code>add($key, int $value, $async = false)</code></p>
+<p>给 int 类型的值加一，如果值不存在，则默认为 0 且加上目标的 <code>$value</code>。</p>
+<h4 id="workercachesub">WorkerCache::sub()</h4>
+<p>定义：<code>sub($key, int $value, $async = false)</code></p>
+<p>给 int 类型的值减一，如果值不存在，则默认为 0 且减去目标的 <code>$value</code>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Module\Example</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">ZM\Store\WorkerCache</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">ZM\Annotation\CQ\CQCommand</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Hello</span> <span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @CQCommand(&quot;set_store&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setStorage</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$arg1</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getNextArg</span><span class="p">(</span><span class="s2">&quot;请输入要设置的内容名称&quot;</span><span class="p">);</span>
+        <span class="nv">$arg2</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getFullArg</span><span class="p">(</span><span class="s2">&quot;请输入要设置的内容&quot;</span><span class="p">);</span>
+        <span class="nx">WorkerCache</span><span class="o">::</span><span class="na">set</span><span class="p">(</span><span class="nv">$arg1</span><span class="p">,</span> <span class="nv">$arg2</span><span class="p">);</span>
+        <span class="k">return</span> <span class="s2">&quot;成功！&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @CQCommand(&quot;get_store&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getStorage</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$arg1</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getFullArg</span><span class="p">(</span><span class="s2">&quot;请输入要获取的内容名称&quot;</span><span class="p">);</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nx">WorkerCache</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$arg1</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$data</span> <span class="o">??</span> <span class="s2">&quot;内容不存在！&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><chat-box>
+) set_store hello world
+( 成功！
+) get_store hello
+( world
+) get_store foo
+( 内容不存在！
+</chat-box></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../bot/turing-api/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 图灵机器人 API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              图灵机器人 API
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../mysql/" class="md-footer__link md-footer__link--next" aria-label="下一页: MySQL 查询器" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              MySQL 查询器
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2021 CrazyBot Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx-switch"> <button data-md-color-scheme="default"><code>默认模式</code></button> <button data-md-color-scheme="slate"><code>暗黑模式</code></button> </span>
+<script> var buttons = document.querySelectorAll("button[data-md-color-scheme]"); buttons.forEach(function(button) { button.addEventListener("click", function() { var attr = this.getAttribute("data-md-color-scheme"); setCookie("_theme", attr); document.body.setAttribute("data-md-color-scheme", attr); var name = document.querySelector("#__code_0 code span:nth-child(7)"); name.textContent = attr; }) }) </script><br><a href="http://beian.miit.gov.cn">沪ICP备2021010446号-1</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

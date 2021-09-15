@@ -1,0 +1,2850 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>CQ 码（多媒体消息） - 炸毛框架文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cq" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="炸毛框架文档" class="md-header__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../../assets/logos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            炸毛框架文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CQ 码（多媒体消息）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../event/" class="md-tabs__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        框架组件
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../advanced/" class="md-tabs__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/FAQ/" class="md-tabs__link">
+        FAQ
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../update/v2/" class="md-tabs__link">
+        更新日志
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs-v1.zhamao.xin/" class="md-tabs__link">
+      <u>炸毛框架 v1</u>
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="炸毛框架文档" class="md-nav__button md-logo" aria-label="炸毛框架文档" data-md-component="logo">
+      
+  <img src="../../../assets/logos.png" alt="logo">
+
+    </a>
+    炸毛框架文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/zhamao-robot/zhamao-framework/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    炸毛框架
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/installation/" class="md-nav__link">
+        安装框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/quickstart-robot/" class="md-nav__link">
+        快速上手（机器人篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/quickstart-http/" class="md-nav__link">
+        快速上手（HTTP篇）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/onebot-choose/" class="md-nav__link">
+        选择聊天机器人实例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/basic-config/" class="md-nav__link">
+        基本配置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/write-module/" class="md-nav__link">
+        编写模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/register-event/" class="md-nav__link">
+        注册事件响应
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/errcode/" class="md-nav__link">
+        错误码对照表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        事件和注解
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="事件和注解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          事件和注解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/" class="md-nav__link">
+        事件和注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/robot-annotations/" class="md-nav__link">
+        机器人注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/route-annotations/" class="md-nav__link">
+        HTTP 路由注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/framework-annotations/" class="md-nav__link">
+        框架核心注解事件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/middleware/" class="md-nav__link">
+        中间件注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/custom-annotations/" class="md-nav__link">
+        自定义注解
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event/event-dispatcher/" class="md-nav__link">
+        事件分发器
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        框架组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="框架组件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          框架组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        框架组件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/" class="md-nav__link">
+        上下文
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        聊天机器人组件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="聊天机器人组件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          聊天机器人组件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../robot-api/" class="md-nav__link">
+        机器人 API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CQ 码（多媒体消息）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CQ 码（多媒体消息）
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    转义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    封装调用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cq_1" class="md-nav__link">
+    CQ 码操作
+  </a>
+  
+    <nav class="md-nav" aria-label="CQ 码操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cqdecode" class="md-nav__link">
+    CQ::decode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqencode" class="md-nav__link">
+    CQ::encode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqescape" class="md-nav__link">
+    CQ::escape()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqremovecq" class="md-nav__link">
+    CQ::removeCQ()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqgetcq" class="md-nav__link">
+    CQ::getCQ()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqgetallcq" class="md-nav__link">
+    CQ::getAllCQ()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cq_2" class="md-nav__link">
+    CQ 码列表
+  </a>
+  
+    <nav class="md-nav" aria-label="CQ 码列表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cqface-qq" class="md-nav__link">
+    CQ::face() - 发送 QQ 表情
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqimage-" class="md-nav__link">
+    CQ::image() - 发送图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqrecord-" class="md-nav__link">
+    CQ::record() - 发送语音
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqat-" class="md-nav__link">
+    CQ::at() - 群里@某人或全体
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqvideo-" class="md-nav__link">
+    CQ::video() - 发送短视频
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqrps-" class="md-nav__link">
+    CQ::rps() - 猜拳
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqdice-" class="md-nav__link">
+    CQ::dice() - 掷骰子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqshake-" class="md-nav__link">
+    CQ::shake() - 窗口抖动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqpoke-" class="md-nav__link">
+    CQ::poke() - 戳一戳
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqanonymous-" class="md-nav__link">
+    CQ::anonymous() - 匿名发消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqshare-" class="md-nav__link">
+    CQ::share() - 链接分享
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqcontact-" class="md-nav__link">
+    CQ::contact() - 推荐好友
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqlocation-" class="md-nav__link">
+    CQ::location() - 发送位置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqmusic-" class="md-nav__link">
+    CQ::music() - 音乐分享
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqforward-" class="md-nav__link">
+    CQ::forward() - 合并转发
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqnode-" class="md-nav__link">
+    CQ::node() - 合并转发自定义节点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqxml-xml" class="md-nav__link">
+    CQ::xml() - XML 消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqjson-json" class="md-nav__link">
+    CQ::json() - JSON 消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cq_custom-cq" class="md-nav__link">
+    CQ::_custom() - 扩展自定义 CQ 码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-util/" class="md-nav__link">
+        机器人消息处理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-token/" class="md-nav__link">
+        Token 验证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turing-api/" class="md-nav__link">
+        图灵机器人 API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        存储
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="存储" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          存储
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/light-cache/" class="md-nav__link">
+        LightCache 轻量缓存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/mysql/" class="md-nav__link">
+        MySQL 查询器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/mysql-db/" class="md-nav__link">
+        MySQL 查询器（废弃）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/redis/" class="md-nav__link">
+        Redis 数据库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/atomics/" class="md-nav__link">
+        ZMAtomic 原子计数器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/spin-lock/" class="md-nav__link">
+        SpinLock 自旋锁
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../store/data-provider/" class="md-nav__link">
+        文件管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        HTTP 服务器工具类
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="HTTP 服务器工具类" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP 服务器工具类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zmrequest/" class="md-nav__link">
+        HTTP 和 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../route-manager/" class="md-nav__link">
+        HTTP 路由管理
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        模块/插件管理
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="模块/插件管理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          模块/插件管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module/module-pack/" class="md-nav__link">
+        模块打包
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module/module-unpack/" class="md-nav__link">
+        模块解包
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coroutine-pool/" class="md-nav__link">
+        协程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleton-trait/" class="md-nav__link">
+        单例类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zmutil/" class="md-nav__link">
+        ZMUtil 杂项
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../global-functions/" class="md-nav__link">
+        全局方法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/" class="md-nav__link">
+        Console 终端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-worker/" class="md-nav__link">
+        TaskWorker 管理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remote-terminal/" class="md-nav__link">
+        Terminal 终端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        进阶开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="进阶开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          进阶开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/" class="md-nav__link">
+        进阶开发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/framework-structure/" class="md-nav__link">
+        框架剖析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/custom-start/" class="md-nav__link">
+        框架启动模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/manually-install/" class="md-nav__link">
+        手动安装环境
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/to-v2/" class="md-nav__link">
+        从 v1 升级
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/inside-class/" class="md-nav__link">
+        内部类文件手册
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/connect-ws-client/" class="md-nav__link">
+        接入 WebSocket 客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/multi-process/" class="md-nav__link">
+        框架多进程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/task-worker/" class="md-nav__link">
+        TaskWorker 提高并发
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      <label class="md-nav__link" for="__nav_4_10">
+        开发实战教程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发实战教程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          开发实战教程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/example/admin/" class="md-nav__link">
+        编写管理员才能触发的功能
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/usual-question/" class="md-nav__link">
+        框架常见问题（持续更新）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/address-already-in-use/" class="md-nav__link">
+        启动时报错 Address already in use
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/display-deadlock/" class="md-nav__link">
+        出现 deadlock 字样
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/light-cache-wrong/" class="md-nav__link">
+        使用 LightCache 关闭时无法正常保存持久化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/wait-message-cqbefore/" class="md-nav__link">
+        CQBefore 过滤不了 waitMessage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        更新日志
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="更新日志" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          更新日志
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/v2/" class="md-nav__link">
+        更新日志（v2）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/v1/" class="md-nav__link">
+        更新日志（v1）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/build-update/" class="md-nav__link">
+        更新日志（build update）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../update/config/" class="md-nav__link">
+        配置文件更新日志
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs-v1.zhamao.xin/" class="md-nav__link">
+        <u>炸毛框架 v1</u>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    转义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    封装调用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cq_1" class="md-nav__link">
+    CQ 码操作
+  </a>
+  
+    <nav class="md-nav" aria-label="CQ 码操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cqdecode" class="md-nav__link">
+    CQ::decode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqencode" class="md-nav__link">
+    CQ::encode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqescape" class="md-nav__link">
+    CQ::escape()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqremovecq" class="md-nav__link">
+    CQ::removeCQ()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqgetcq" class="md-nav__link">
+    CQ::getCQ()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqgetallcq" class="md-nav__link">
+    CQ::getAllCQ()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cq_2" class="md-nav__link">
+    CQ 码列表
+  </a>
+  
+    <nav class="md-nav" aria-label="CQ 码列表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cqface-qq" class="md-nav__link">
+    CQ::face() - 发送 QQ 表情
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqimage-" class="md-nav__link">
+    CQ::image() - 发送图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqrecord-" class="md-nav__link">
+    CQ::record() - 发送语音
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqat-" class="md-nav__link">
+    CQ::at() - 群里@某人或全体
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqvideo-" class="md-nav__link">
+    CQ::video() - 发送短视频
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqrps-" class="md-nav__link">
+    CQ::rps() - 猜拳
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqdice-" class="md-nav__link">
+    CQ::dice() - 掷骰子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqshake-" class="md-nav__link">
+    CQ::shake() - 窗口抖动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqpoke-" class="md-nav__link">
+    CQ::poke() - 戳一戳
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqanonymous-" class="md-nav__link">
+    CQ::anonymous() - 匿名发消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqshare-" class="md-nav__link">
+    CQ::share() - 链接分享
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqcontact-" class="md-nav__link">
+    CQ::contact() - 推荐好友
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqlocation-" class="md-nav__link">
+    CQ::location() - 发送位置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqmusic-" class="md-nav__link">
+    CQ::music() - 音乐分享
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqforward-" class="md-nav__link">
+    CQ::forward() - 合并转发
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqnode-" class="md-nav__link">
+    CQ::node() - 合并转发自定义节点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqxml-xml" class="md-nav__link">
+    CQ::xml() - XML 消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cqjson-json" class="md-nav__link">
+    CQ::json() - JSON 消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cq_custom-cq" class="md-nav__link">
+    CQ::_custom() - 扩展自定义 CQ 码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/zhamao-robot/zhamao-framework/blob/master/docs/component/bot/cqcode.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="cq">CQ 码（多媒体消息）</h1>
+<p>消息中的多媒体内容使用 CQ 码来表示，形如 <code>[CQ:face,id=178]</code>。其中，<code>[CQ:]</code> 是固定格式；<code>face</code> 是「功能名」，除了 <code>face</code> 还有许多不同的功能名；<code>id=178</code> 是「参数」，某些功能不需要参数，而另一些需要多个参数，当有多个参数时，参数间使用逗号分隔。</p>
+<h2 id="_1">格式</h2>
+<p>一些 CQ 码的例子如下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[CQ:shake]
+[CQ:face,id=178]
+[CQ:share,title=标题,url=http://baidu.com]
+</code></pre></div>
+</td></tr></table>
+<p>更多 CQ 码功能请参考 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/message/segment.md">消息段类型</a>。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>CQ 码中不应有多余的空格，例如不应该使用 <code>[CQ:face, id=178]</code>。</p>
+<p>CQ 码的参数值可以包含空格、换行、除 <code>[],&amp;</code> 之外的特殊符号等。在解析时，应直接取 <code>[CQ:</code> 后、第一个 <code>,</code> 或 <code>]</code> 前的部分为功能名，第一个 <code>,</code> 之后到 <code>]</code> 之间的部分为参数，按 <code>,</code> 分割后，每个部分第一个 <code>=</code> 前的内容为参数名，之后的部分为参数值。例如 <code>[CQ:share,title=标题中有=等号,url=http://baidu.com]</code> 中，功能名为 <code>share</code>，<code>title</code> 参数值为 <code>标题中有=等号</code>，<code>url</code> 参数值为 <code>http://baidu.com</code>。</p>
+</div>
+<h2 id="_2">转义</h2>
+<p>CQ 码中包含一些特殊字符：<code>[</code>、<code>]</code>、<code>,</code> 等，而 CQ 码又是可能混杂在纯文本内容之中的，因此消息中的纯文本内容需要对特殊字符进行转义，以避免歧义。具体的转义规则如下：</p>
+<table>
+<thead>
+<tr>
+<th>转义前</th>
+<th>转义后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td><code>[</code></td>
+<td><code>&amp;#91;</code></td>
+</tr>
+<tr>
+<td><code>]</code></td>
+<td><code>&amp;#93;</code></td>
+</tr>
+</tbody>
+</table>
+<p>另一方面，CQ 码内部的参数值也可能出现特殊字符，也是需要转义的。由于 <code>,</code>（半角逗号）在 CQ 码中用于分隔参数，因此除了上面的转义规则，还需要对 <code>,</code> 进行转义，如下：</p>
+<table>
+<thead>
+<tr>
+<th>转义前</th>
+<th>转义后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td><code>[</code></td>
+<td><code>&amp;#91;</code></td>
+</tr>
+<tr>
+<td><code>]</code></td>
+<td><code>&amp;#93;</code></td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td><code>&amp;#44;</code></td>
+</tr>
+</tbody>
+</table>
+<p>例如，一个链接分享消息的 CQ 码可能如下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[CQ:share,title=震惊&amp;#44;小伙睡觉前居然...,url=http://baidu.com/?a=1&amp;amp;b=2]
+</code></pre></div>
+</td></tr></table>
+<h2 id="_3">封装调用</h2>
+<p>框架提供了 CQ 码的封装，你可以在任何位置使用封装好的 CQ 码生成器。</p>
+<p>生成器是一个静态类，里面的方法全部是静态调用，命名空间是：<code>ZM\API\CQ</code>。</p>
+<p>例如，给用户发送图片这样写就好啦！只需要将添加图片的地方拼到回复用户的字符串里。如果只发图片，整个字符串里只能有 CQ 码。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Module\Example</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">ZM\API\CQ</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">ZM\Annotation\CQ\CQCommand</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Hello</span> <span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @CQCommand(&quot;发送图片&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">msgRecv</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">CQ</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s2">&quot;https://zhamao.xin/file/hello.jpg&quot;</span><span class="p">);</span>
+        <span class="c1">// 相当于返回：&quot;[CQ:image,file=https://zhamao.xin/file/hello.jpg]&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>效果</p>
+<p><chat-box>
+) 发送图片
+[ https://zhamao.xin/file/hello.jpg
+</chat-box></p>
+<h2 id="cq_1">CQ 码操作</h2>
+<h3 id="cqdecode">CQ::decode()</h3>
+<p>CQ 码字符反转义。</p>
+<p>定义：<code>CQ::encode($msg, $is_content = false)</code></p>
+<p>当 <code>$is_content</code> 为 true 时，会将 <code>&amp;#44;</code> 转义为 <code>,</code>。</p>
+<table>
+<thead>
+<tr>
+<th>反转义前</th>
+<th>反转义后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td><code>&amp;</code></td>
+</tr>
+<tr>
+<td><code>&amp;#91;</code></td>
+<td><code>[</code></td>
+</tr>
+<tr>
+<td><code>&amp;#93;</code></td>
+<td><code>]</code></td>
+</tr>
+<tr>
+<td><code>&amp;#44;</code></td>
+<td><code>,</code></td>
+</tr>
+</tbody>
+</table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$str = CQ::decode(&quot;&amp;#91;CQ:at,qq=我只是一条普通的文本&amp;#93;&quot;);</span>
+<span class="x">// 转换为 &quot;[CQ:at,qq=我只是一条普通的文本]&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqencode">CQ::encode()</h3>
+<p>转义 CQ 码的敏感符号，防止 酷Q 把不该解析为 CQ 码的消息内容当作 CQ 码处理。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$str = CQ::encode(&quot;[CQ:我只是一条普通的文本]&quot;);</span>
+<span class="x">// $str: &quot;&amp;#91;CQ:我只是一条普通的文本&amp;#93;&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>定义：<code>CQ::encode($msg, $is_content = false)</code></p>
+<p>当 <code>$is_content</code> 为 true 时，会将 <code>,</code> 转义为 <code>&amp;#44;</code>。</p>
+<h3 id="cqescape">CQ::escape()</h3>
+<p>同 <code>CQ::encode()</code>。</p>
+<h3 id="cqremovecq">CQ::removeCQ()</h3>
+<p>去除字符串中所有的 CQ 码。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">$str = CQ::removeCQ(&quot;[CQ:at,qq=all]这是带表情的全体消息[CQ:face,id=8]&quot;);</span>
+<span class="x">// $str: &quot;这是带表情的全体消息&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqgetcq">CQ::getCQ()</h3>
+<p>解析 CQ 码。</p>
+<ul>
+<li>定义：<code>getCQ($msg, $is_object = false)</code></li>
+<li>参数 <code>$is_object</code> 为 true 时，返回一个 <code>\ZM\Entity\CQObject</code> 对象，此对象的属性和下表相同。（2.3.0+ 版本可用）</li>
+<li>返回：<code>数组 | CQObject | null</code>，见下表。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>键名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>CQ码类型，比如 <code>[CQ:at]</code> 中的 <code>at</code></td>
+</tr>
+<tr>
+<td>params</td>
+<td>参数列表，比如 <code>[CQ:image,file=123.jpg,url=http://a.com/a.jpg]</code>，params 为  <code>["file" =&gt; "123","url" =&gt; "http://a.com/a.jpg"]</code></td>
+</tr>
+<tr>
+<td>start</td>
+<td>此 CQ 码在字符串中的起始位置</td>
+</tr>
+<tr>
+<td>end</td>
+<td>此 CQ 码在字符串中的结束位置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cqgetallcq">CQ::getAllCQ()</h3>
+<p>定义：<code>CQ::getAllCQ($msg, $is_object = false)</code></p>
+<p>参数 <code>$is_object</code> 为 true 时，返回一个 <code>\ZM\Entity\CQObject[]</code> 对象数组，此对象的属性和上面的表格内相同。（2.3.0+ 版本可用）</p>
+<p>解析 CQ 码，和 <code>getCQ()</code> 的区别是，这个会将字符串中的所有 CQ 码都解析出来，并以同样上方解析出来的数组格式返回。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">CQ::getAllCQ(&quot;[CQ:at,qq=123]你好啊[CQ:at,qq=456]&quot;);</span>
+<span class="x">/*</span>
+<span class="x">[</span>
+<span class="x">  [</span>
+<span class="x">    &quot;type&quot; =&gt; &quot;at&quot;,</span>
+<span class="x">    &quot;params&quot; =&gt; [</span>
+<span class="x">      &quot;qq&quot; =&gt; &quot;123&quot;,</span>
+<span class="x">    ],</span>
+<span class="x">    &quot;start&quot; =&gt; 0,</span>
+<span class="x">    &quot;end&quot; =&gt; 13,</span>
+<span class="x">  ],</span>
+<span class="x">  [</span>
+<span class="x">    &quot;type&quot; =&gt; &quot;at&quot;,</span>
+<span class="x">    &quot;params&quot; =&gt; [</span>
+<span class="x">      &quot;qq&quot; =&gt; &quot;456&quot;,</span>
+<span class="x">    ],</span>
+<span class="x">    &quot;start&quot; =&gt; 17,</span>
+<span class="x">    &quot;end&quot; =&gt; 30,</span>
+<span class="x">  ],</span>
+<span class="x">]</span>
+<span class="x">*/</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="cq_2">CQ 码列表</h2>
+<h3 id="cqface-qq">CQ::face() - 发送 QQ 表情</h3>
+<p>发送 QQ 原生表情。</p>
+<p>定义：<code>CQ::face($id)</code></p>
+<p>参数：<code>$id</code> 为 QQ 表情对应的 ID 号，一些常见的表情 ID 对应的表情样式见 <a href="https://static.zhamao.me/face_id.html">QQ 对应表情ID表</a>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;打盹&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function faceTest() {</span>
+<span class="x">    ctx()-&gt;reply(&quot;正在打盹...&quot;);</span>
+<span class="x">    ctx()-&gt;reply(CQ::face(8));</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><chat-box>
+) 打盹
+( 正在打盹...
+[ https://docs-v1.zhamao.xin/face/8.gif
+</chat-box></p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>对于不断更新的 QQ 版本下，可能会持续扩充新的 QQ 表情，如果上表没有新的表情的话，也可以使用消息接收的方式，让机器人收到表情后解析出来对应的 id 然后再发送。</p>
+</div>
+<h3 id="cqimage-">CQ::image() - 发送图片</h3>
+<p>发送图片。</p>
+<p>定义：<code>image($file, $cache = true, $flash = false, $proxy = true, $timeout = -1)</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>必填</td>
+<td>图片文件名</td>
+</tr>
+<tr>
+<td><code>flash</code></td>
+<td>✓</td>
+<td>✓</td>
+<td><code>false</code></td>
+<td>图片类型，当参数为 true 时代表发送闪照</td>
+</tr>
+<tr>
+<td><code>cache</code></td>
+<td></td>
+<td>✓</td>
+<td><code>true</code></td>
+<td>只在通过网络 URL 发送时有效，表示是否使用已缓存的文件，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>proxy</code></td>
+<td></td>
+<td>✓</td>
+<td><code>true</code></td>
+<td>只在通过网络 URL 发送时有效，表示是否通过代理下载文件（需通过环境变量或配置文件配置代理），默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td></td>
+<td>✓</td>
+<td><code>-1</code></td>
+<td>只在通过网络 URL 发送时有效，单位秒，表示下载网络文件的超时时间，默认 -1 不超时</td>
+</tr>
+</tbody>
+</table>
+<p>发送时，<code>file</code> 参数除了支持使用收到的图片文件名直接发送外，还支持：</p>
+<ul>
+<li>绝对路径，例如 <code>file:///root/imagetest/1.png</code>，格式使用 <a href="https://tools.ietf.org/html/rfc8089"><code>file</code> URI</a></li>
+<li>网络 URL，例如 <code>http://i1.piimg.com/567571/fdd6e7b6d93f1ef0.jpg</code></li>
+<li>Base64 编码，例如 <code>base64://iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAIAAADJt1n/AAAAKElEQVQ4EWPk5+RmIBcwkasRpG9UM4mhNxpgowFGMARGEwnBIEJVAAAdBgBNAZf+QAAAAABJRU5ErkJggg==</code></li>
+</ul>
+<h3 id="cqrecord-">CQ::record() - 发送语音</h3>
+<p>发送语音消息。</p>
+<p>定义：<code>CQ::record($file, $magic = false, $cache = true, $proxy = true, $timeout = -1)</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>必填</td>
+<td>音频文件名</td>
+</tr>
+<tr>
+<td><code>flash</code></td>
+<td>✓</td>
+<td>✓</td>
+<td><code>false</code></td>
+<td>图片类型，当参数为 true 时代表发送闪照</td>
+</tr>
+<tr>
+<td><code>cache</code></td>
+<td></td>
+<td>✓</td>
+<td><code>true</code></td>
+<td>只在通过网络 URL 发送时有效，表示是否使用已缓存的文件，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>proxy</code></td>
+<td></td>
+<td>✓</td>
+<td><code>true</code></td>
+<td>只在通过网络 URL 发送时有效，表示是否通过代理下载文件（需通过环境变量或配置文件配置代理），默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td></td>
+<td>✓</td>
+<td><code>-1</code></td>
+<td>只在通过网络 URL 发送时有效，单位秒，表示下载网络文件的超时时间，默认 -1 不超时</td>
+</tr>
+</tbody>
+</table>
+<p>发送时，<code>file</code> 参数除了支持使用收到的语音文件名直接发送外，还支持其它形式，参考上方发送图片。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;说你好&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function say() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::record(&quot;https://zhamao.xin/file/hello.mp3&quot;));</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><chat-box>
+) 说你好
+( [语音消息，点击收听]  2'' )))
+</chat-box></p>
+<blockquote>
+<p>此 CQ 码只能用于单独一条文本消息中，如果混有其他字符串，则会吞掉其他字符串内容。</p>
+</blockquote>
+<h3 id="cqat-">CQ::at() - 群里@某人或全体</h3>
+<p>在群里 at 某个人或全体成员（全体成员需要有管理员权限）。</p>
+<p>定义：<code>CQ::at($qq)</code></p>
+<p>参数：<code>$qq</code> 参数必填，如果填的是 QQ 号，则是单独 at 某人，如果是 <code>all</code>，则是 at 全体成员。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;at测试&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function atTest() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::at(627577391).&quot; 你好啊！&quot;);</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><chat-box>
+) at测试
+( @鲸鱼 你好啊！
+</chat-box></p>
+<h3 id="cqvideo-">CQ::video() - 发送短视频</h3>
+<p>发送短视频。</p>
+<p>定义：<code>CQ::video($file, $cache = true, $proxy = true, $timeout = -1)</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>必填</td>
+<td>短视频文件名</td>
+</tr>
+<tr>
+<td><code>cache</code></td>
+<td></td>
+<td>✓</td>
+<td><code>true</code></td>
+<td>只在通过网络 URL 发送时有效，表示是否使用已缓存的文件，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>proxy</code></td>
+<td></td>
+<td>✓</td>
+<td><code>true</code></td>
+<td>只在通过网络 URL 发送时有效，表示是否通过代理下载文件（需通过环境变量或配置文件配置代理），默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td></td>
+<td>✓</td>
+<td><code>-1</code></td>
+<td>只在通过网络 URL 发送时有效，单位秒，表示下载网络文件的超时时间，默认 -1 不超时</td>
+</tr>
+</tbody>
+</table>
+<p>发送时，<code>file</code> 参数除了支持使用收到的视频文件名直接发送外，还支持其它形式，参考上方发送图片。</p>
+<blockquote>
+<p>此 CQ 码只能用于单独一条文本消息中，如果混有其他字符串，则会吞掉其他字符串内容。</p>
+</blockquote>
+<h3 id="cqrps-">CQ::rps() - 猜拳</h3>
+<p>定义：<code>CQ::rps()</code></p>
+<p>用法：<code>CQ::rps()</code></p>
+<blockquote>
+<p>此 CQ 码只能用于单独一条文本消息中，如果混有其他字符串，则会吞掉其他字符串内容。</p>
+</blockquote>
+<h3 id="cqdice-">CQ::dice() - 掷骰子</h3>
+<p>定义：<code>CQ::dice()</code></p>
+<p>用法：<code>CQ::dice()</code></p>
+<blockquote>
+<p>此 CQ 码只能用于单独一条文本消息中，如果混有其他字符串，则会吞掉其他字符串内容。</p>
+</blockquote>
+<h3 id="cqshake-">CQ::shake() - 窗口抖动</h3>
+<p>定义：<code>CQ::shake()</code></p>
+<p>用法：<code>CQ::shake()</code></p>
+<blockquote>
+<p>此 CQ 码只能用于单独一条文本消息中，如果混有其他字符串，则会吞掉其他字符串内容。</p>
+</blockquote>
+<h3 id="cqpoke-">CQ::poke() - 戳一戳</h3>
+<p>发送戳一戳。</p>
+<p>定义：<code>CQ::poke($type, $id, $name = "")</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>可能的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>见 <a href="https://github.com/mamoe/mirai/blob/f5eefae7ecee84d18a66afce3f89b89fe1584b78/mirai-core/src/commonMain/kotlin/net.mamoe.mirai/message/data/HummerMessage.kt#L49">Mirai 的 PokeMessage 类</a></td>
+<td>类型</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>同上</td>
+<td>ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>✓</td>
+<td></td>
+<td>同上</td>
+<td>表情名</td>
+</tr>
+</tbody>
+</table>
+<p>例子：<code>CQ::poke(6,-1)</code></p>
+<p>效果：放大招</p>
+<blockquote>
+<p>此 CQ 码只能用于单独一条文本消息中，如果混有其他字符串，则会吞掉其他字符串内容。</p>
+</blockquote>
+<h3 id="cqanonymous-">CQ::anonymous() - 匿名发消息</h3>
+<p>匿名发消息。需要在允许匿名发消息的群里发。</p>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+<p>当收到匿名消息时，需要通过 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/event/message.md#群消息">消息事件的群消息</a> 的 <code>anonymous</code> 字段判断。</p>
+</div>
+<p>定义：<code>CQ::anonymous($ignore = 1)</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;匿名测试&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function anonymousTest() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::anonymous().&quot;匿名测试&quot;);</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqshare-">CQ::share() - 链接分享</h3>
+<p>发送链接分享卡片，可自定义内容。</p>
+<p>定义：<code>CQ::share($url, $title, $content = null, $image = null)</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>可能的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>URL</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>可选，内容描述</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>可选，图片 URL</td>
+</tr>
+</tbody>
+</table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;链接分享测试&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function shareTest() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::share(&quot;https://baidu.com&quot;, &quot;UC忽悠部&quot;, &quot;震惊！我市一男子在光天化日之下...&quot;));</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqcontact-">CQ::contact() - 推荐好友</h3>
+<p>发送推荐好友的卡片。</p>
+<p>定义：<code>CQ::contact($type, $id)</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>可能的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>✓</td>
+<td>✓</td>
+<td><code>qq</code>，<code>group</code></td>
+<td>推荐好友或群</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>被推荐人的 QQ 号或群号</td>
+</tr>
+</tbody>
+</table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;我的名片&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function myCard() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::contact(&quot;qq&quot;, ctx()-&gt;getUserId()));</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqlocation-">CQ::location() - 发送位置</h3>
+<p>发送位置，基于经纬度坐标发的。</p>
+<p>定义：<code>CQ::location($lat, $lon, $title = "", $content = "")</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>可能的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lat</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>纬度</td>
+</tr>
+<tr>
+<td><code>lon</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>经度</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>可选，标题</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>可选，内容描述</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cqmusic-">CQ::music() - 音乐分享</h3>
+<p>分享音乐，通过卡片。</p>
+<p>发送音乐分享卡片。此 CQ 码如果伴随着其他文字，则文字内容会被丢弃。</p>
+<p>定义：<code>CQ::music($type, $id_or_url, $audio = null, $title = null, $content = null, $image = null)</code></p>
+<ul>
+<li><code>$type</code>: 发送类型</li>
+<li><code>$id_or_url</code>: 音乐的 id 或 音乐卡片点进去打开的链接</li>
+<li><code>$audio</code>: 音频文件的 HTTP 地址</li>
+<li><code>$title</code>: 音乐卡片的标题，建议 12 字以内</li>
+<li><code>$content</code>: 音乐卡片的简介内容（可选）</li>
+<li><code>$image</code>: 音乐卡片的图片的链接地址（可选）</li>
+</ul>
+<p>如果 <code>$type</code> 参数为 <code>qq</code> 或 <code>163</code> 或 <code>xiami</code>，则必须且只和第二个参数 <code>$id_or_url</code> 配合使用。这三个为内置分享，需要先通过搜索功能获取对应平台歌曲的 id 后使用。</p>
+<p>如果 <code>$type</code> 参数为 <code>custom</code>，则表明此音乐卡片为用户自定义，你可以根据自己的需要自定义卡片内容和音频。此时必须填写 <code>$id_or_url</code>, <code>$audio</code>, <code>$title</code> 三个参数。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">ctx()-&gt;reply(CQ::music(&quot;163&quot;, &quot;730806&quot;)); //一首我喜欢的歌</span>
+<span class="x">// 以内置的发送类型发送音乐卡片，我这里挑了网易云音乐的一首歌。</span>
+
+<span class="x">ctx()-&gt;reply(&quot;custom&quot;, &quot;https://baidu.com/&quot;, &quot;https://zhamao.xin/file/hello.mp3&quot;, &quot;我是Siri说出来的Hello&quot;, &quot;不服来打我呀！&quot;, &quot;https://zhamao.xin/file/hello.jpg&quot;);</span>
+<span class="x">// 自定义整个卡片的每个内容</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqforward-">CQ::forward() - 合并转发</h3>
+<p>合并转发消息。</p>
+<p>定义：<code>CQ::forward($id)</code></p>
+<p>参数</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[CQ:forward,id=123456]
+</code></pre></div>
+</td></tr></table>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>可能的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>✓</td>
+<td></td>
+<td>必填</td>
+<td>合并转发 ID，需通过 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/api/public.md#get_forward_msg-获取合并转发消息"><code>get_forward_msg</code> API</a> 获取具体内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cqnode-">CQ::node() - 合并转发自定义节点</h3>
+<p>接收时，此消息段不会直接出现在消息事件的 <code>message</code> 中，需通过 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/api/public.md#get_forward_msg-获取合并转发消息"><code>get_forward_msg</code> API</a> 获取。发送时，通过获取回来的 API 节点信息进行发送。</p>
+<p>定义：<code>CQ::node($user_id, $nickname, $content)</code></p>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>收</th>
+<th>发</th>
+<th>可能的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>发送者 QQ 号</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>发送者昵称</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>-</td>
+<td>消息内容，支持发送消息时的 <code>message</code> 数据类型，见 <a href="https://github.com/howmanybots/onebot/blob/master/v11/specs/api/#参数">API 的参数</a></td>
+</tr>
+</tbody>
+</table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;node测试&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function nodeTest() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::node(123456, &quot;Jack&quot;, &quot;[CQ:face,id=123]哈喽～&quot;));</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqxml-xml">CQ::xml() - XML 消息</h3>
+<p>发送 QQ 兼容的 XML 多媒体消息。</p>
+<p>定义：<code>CQ::xml($data)</code></p>
+<p>参数：<code>$data</code> 为 xml 字符串</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * @CQCommand(&quot;xml测试&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function xmlTest() {</span>
+<span class="x">    ctx()-&gt;reply(CQ::xml(&quot;</span><span class="cp">&lt;?</span><span class="nx">xml</span> <span class="o">...</span><span class="s2">&quot;));</span>
+<span class="s2">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cqjson-json">CQ::json() - JSON 消息</h3>
+<p>发送 QQ 兼容的 JSON 多媒体消息。</p>
+<p>定义：<code>CQ::json($data, $resid = 0)</code></p>
+<p>参数同上，内含 JSON 字符串即可。</p>
+<p>其中 <code>$resid</code> 是面向 go-cqhttp 扩展的参数，默认不填为 0，走小程序通道，填了走富文本通道发送。</p>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+<p>因为某些众所周知的原因，XML 和 JSON 的返回不提供实例，有兴趣的可以自行研究如何编写，文档不含任何相关教程。</p>
+</div>
+<h3 id="cq_custom-cq">CQ::_custom() - 扩展自定义 CQ 码</h3>
+<p>用于兼容各类含有被支持的扩展 CQ 码，比如 go-cqhttp 的 <code>[CQ:gift]</code> 礼物类型。</p>
+<p>定义：<code>CQ::_custom(string $type_name, array $params)</code></p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type_name</code></td>
+<td>CQ 码类型，如 <code>music</code>，<code>at</code></td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td>发送的 CQ 码中的参数数组，例如 <code>["qq" =&gt; "123456"]</code></td>
+</tr>
+</tbody>
+</table>
+<p>下面是一个例子：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">CQ::_custom(&quot;at&quot;,[&quot;qq&quot; =&gt; &quot;123456&quot;,&quot;qwe&quot; =&gt; &quot;asd&quot;]);</span>
+<span class="x">// 返回：[CQ:at,qq=123456,qwe=asd]</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../robot-api/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 机器人 API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              机器人 API
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../message-util/" class="md-footer__link md-footer__link--next" aria-label="下一页: 机器人消息处理" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              机器人消息处理
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2021 CrazyBot Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx-switch"> <button data-md-color-scheme="default"><code>默认模式</code></button> <button data-md-color-scheme="slate"><code>暗黑模式</code></button> </span>
+<script> var buttons = document.querySelectorAll("button[data-md-color-scheme]"); buttons.forEach(function(button) { button.addEventListener("click", function() { var attr = this.getAttribute("data-md-color-scheme"); setCookie("_theme", attr); document.body.setAttribute("data-md-color-scheme", attr); var name = document.querySelector("#__code_0 code span:nth-child(7)"); name.textContent = attr; }) }) </script><br><a href="http://beian.miit.gov.cn">沪ICP备2021010446号-1</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
